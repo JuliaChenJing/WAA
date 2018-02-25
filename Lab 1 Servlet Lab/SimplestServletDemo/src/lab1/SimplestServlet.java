@@ -1,4 +1,4 @@
-package mum.cs472;
+package lab1;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/Simplest")
-public class SimplestServlet extends HttpServlet {//建立一个类，扩展HttpServlet接口
+public class SimplestServlet extends HttpServlet {//建立一个类，扩展HttpServlet接�?�
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
