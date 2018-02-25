@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Web-Application-Architecture">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Lab 1 Servlet Lab/DownloadPDFTest/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Lab 1 Servlet Lab/FirstServletDemo/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Lab 1 Servlet Lab/FirstServletLab-numberQuiz/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Lab 1 Servlet Lab/ForEachDemo/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Lab 1 Servlet Lab/NumberQuiz/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Lab 1 Servlet Lab/ServletConfigTest/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Lab 1 Servlet Lab/SimplestServletDemo/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Lab 2 Servlet State Lab/MaintainStateDemo/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Lab 3 JSP/JSPIntro/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/Lab 3 JSP/JSPServletHelloWorld/src"/>
+        <property name="context-root" value="Web-Application-Architecture"/>
+        <property name="java-output-path" value="/Web-Application-Architecture/Lab 1 Servlet Lab/DownloadPDFTest/build/classes"/>
+    </wb-module>
+</project-modules>

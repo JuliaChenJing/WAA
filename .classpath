@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="Lab 1 Servlet Lab/DownloadPDFTest/src"/>
+	<classpathentry kind="src" path="Lab 1 Servlet Lab/FirstServletDemo/src"/>
+	<classpathentry kind="src" path="Lab 1 Servlet Lab/FirstServletLab-numberQuiz/src"/>
+	<classpathentry kind="src" path="Lab 1 Servlet Lab/ForEachDemo/src"/>
+	<classpathentry kind="src" path="Lab 1 Servlet Lab/NumberQuiz/src"/>
+	<classpathentry kind="src" path="Lab 1 Servlet Lab/ServletConfigTest/src"/>
+	<classpathentry kind="src" path="Lab 1 Servlet Lab/SimplestServletDemo/src"/>
+	<classpathentry kind="src" path="Lab 2 Servlet State Lab/MaintainStateDemo/src"/>
+	<classpathentry kind="src" path="Lab 3 JSP/JSPIntro/src"/>
+	<classpathentry kind="src" path="Lab 3 JSP/JSPServletHelloWorld/src"/>
+	<classpathentry kind="lib" path="Lab 1 Servlet Lab/ForEachDemo/WebContent/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="output" path="Lab 1 Servlet Lab/DownloadPDFTest/build/classes"/>
+</classpath>
