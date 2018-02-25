@@ -12,6 +12,11 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet("/Logon")
 public class LogonServlet extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -32,10 +37,12 @@ public class LogonServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession sess = request.getSession();
-		System.out.print(sess.getAttribute("username"));
+		System.out.print(sess.getAttribute("username"));//null
 		PrintWriter out = response.getWriter();
 		out.print("<html><head><title>Test</title></head><body>");
-		out.print("<p>from doPost method: Postback received</p>");
+		out.print("<p>Wrong user id or password! Please try again </p>");
+		out.print("<h1>Basic Get Post Demo</h1>");
+		out.print("<a href='GuessNumber'> Start the Guess Number app</a>");
 		out.print("</body></html>");
 	}
 }
