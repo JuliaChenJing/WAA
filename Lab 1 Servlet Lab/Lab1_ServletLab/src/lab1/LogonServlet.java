@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/Logon")
 public class LogonServlet extends HttpServlet {
@@ -30,6 +31,8 @@ public class LogonServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HttpSession sess = request.getSession();
+		System.out.print(sess.getAttribute("username"));
 		PrintWriter out = response.getWriter();
 		out.print("<html><head><title>Test</title></head><body>");
 		out.print("<p>from doPost method: Postback received</p>");
