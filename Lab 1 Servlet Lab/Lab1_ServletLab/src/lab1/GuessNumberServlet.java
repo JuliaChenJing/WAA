@@ -27,11 +27,16 @@ public class GuessNumberServlet extends HttpServlet {
 		out.println("</form>");
 		out.print("</body></html>");
 
-		final String targetNumber = "8";
-		if (request.getParameter("number").equals(targetNumber)) {
-			out.print("<p>You Got it </p>");
+		final int targetNumber = 8;
+		int numberInput = Integer.parseInt(request.getParameter("number"));
+		if (numberInput == targetNumber) {
+			out.print("<p>Correct, Congratulations</p>");
+		} else if (numberInput > targetNumber) {
+			out.print("<p>Too high, try again </p>");
+		} else if (numberInput < targetNumber) {
+			out.print("<p>Too low, try again </p>");
 		} else
-			out.print("<p>Wrong Number </p>");
+			out.print("<p>Are you sure it is an integer? </p>");
 		out.close();
 	}
 
