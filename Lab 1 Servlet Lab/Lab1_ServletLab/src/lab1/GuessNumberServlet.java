@@ -21,8 +21,8 @@ public class GuessNumberServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         out.print("<html><head><title>Guess A Number</title></head><body>");
         out.print("<form method='post'>");
-        out.print("<p>from doGet method : Please click the button</p>");
-        out.print("<input type='submit' value='Click me'/>");
+        out.print("<p>Please Choose a number</p>");
+        out.print("<input type='submit' value='Try this number'/>");
         out.print("</form>");
         out.print("</body></html>");
     }
