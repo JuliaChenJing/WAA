@@ -11,6 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/StateServlet")
 public class StateServlet extends HttpServlet {// 建立一个类，扩展HttpServlet接口
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
