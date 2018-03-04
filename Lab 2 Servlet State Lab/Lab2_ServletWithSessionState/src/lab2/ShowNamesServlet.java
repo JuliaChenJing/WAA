@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/AddName")
-public class AddNameServlet extends HttpServlet {
+@WebServlet("/ShowNames")
+public class ShowNamesServlet extends HttpServlet {
 	/**
 	 * 
 	 */

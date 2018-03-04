@@ -25,32 +25,29 @@ public class NamesServlet extends HttpServlet {
 		out.println("<body>");
 		// show all names
 		out.print("<h1> Show all Names</h1>");
-		out.println("<input type=submit value='Show All Name'> <br><br>");
-		
+		out.println("<form action=ShowNames method='get'>");
+		out.println("<input  type=submit value='Show Names'></form>");
 		// add
 		out.print("<h1>Add a Name</h1>");
-		out.println("<form method='get'>");
+		out.println("<form action=AddName method='get'>");
 		out.println("Key=<input type=text name=key> <br>");
 		out.println("First Name=<input type=text name=firstName> <br>");
 		out.println("Last Name=<input type=text name=lastName >");
 		out.println("<input type=submit value='Add'>");
 		out.println("</form>  <br>");
-		
+
 		// remove
 		out.print("<h1>Remove a Name</h1>");
+		out.println("<form action=RemoveName method='get'>");
 		out.println("Key=<input type=text name=key> <br>");
-		out.println("<input type=submit value='Remove'>");
-		out.println("</body>");
+		out.println("<input   type=submit value='Remove'>");
+		out.println("</form></body>");
 		out.println("</html>");
-		// doPost(request, response);
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// PrintWriter out = response.getWriter();
-		// out.print("<h1>Start the Basic Get Post Demo</h1>");
-		// out.print("<a href='GuessNumber'> Start the Guess Number app</a>");
-		// out.print("</body></html>");
+		doPost(request, response);
 	}
 }
