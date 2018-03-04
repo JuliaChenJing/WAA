@@ -1,4 +1,4 @@
-package lab1;
+package lab2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/Logon")
-public class LogonServlet extends HttpServlet {
+@WebServlet("/AllName")
+public class AllNameServlet extends HttpServlet {
 	/**
 	 * 
 	 */
