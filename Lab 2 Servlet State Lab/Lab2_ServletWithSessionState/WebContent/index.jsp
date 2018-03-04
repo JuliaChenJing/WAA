@@ -6,5 +6,5 @@
 </head>
 <body>
 	<h1>Open Show Name App</h1>
-	<a href='AllName'> Start the Hello Servlet app</a>
+	<a href='Name'> Start the Show Name App</a>
 <body>

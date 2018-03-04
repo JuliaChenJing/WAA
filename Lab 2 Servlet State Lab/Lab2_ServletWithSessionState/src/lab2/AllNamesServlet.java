@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/AllName")
-public class AllNameServlet extends HttpServlet {
+@WebServlet("/AllNames")
+public class AllNamesServlet extends HttpServlet {
 	/**
 	 * 
 	 */
@@ -30,8 +30,6 @@ public class AllNameServlet extends HttpServlet {
 		out.println("</form>");
 		out.println("</body>");
 		out.println("</html>");
-		System.out.println("username: " + request.getParameter("username"));
-		System.out.println("password: " + request.getParameter("password"));
 
 		if (request.getParameter("username").equals("user") && request.getParameter("password").equals("pass")) {
 			out.print("<p>You are logged in </p>");
