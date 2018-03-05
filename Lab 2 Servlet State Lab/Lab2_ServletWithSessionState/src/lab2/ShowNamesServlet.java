@@ -2,6 +2,8 @@ package lab2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,25 +16,26 @@ public class ShowNamesServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	ArrayList<Person> personList = new ArrayList<Person>();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		personList.add(new Person(1, "Julia", "Chen"));
 		PrintWriter out = response.getWriter();
-		out.print("<html><head><title>Test</title></head><body>");
-		out.print("<form method='post'>");
-		out.print("<p>from doGet method : Please click the button</p>");
-		out.print("<input type='submit' value='Click me'/>");
-		out.print("</form>");
+		out.print("<html><head><title> Names</title></head><body>");
+		out.print("<h1> Show Names</h1>");
+		for (Person p : personList) {
+			out.print("<p>key :   " + p.getKey() + "</p>");
+			out.print("<p>first name : " + p.getFirstName() + "</p>");
+			out.print("<p>last name :  " + p.getLastName() + "</p>");
+		}
 		out.print("</body></html>");
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-		out.print("<html><head><title>Test</title></head><body>");
-		out.print("<p>from doPost method: Postback received</p>");
-		out.print("</body></html>");
+		doPost(request, response);
 	}
 }
