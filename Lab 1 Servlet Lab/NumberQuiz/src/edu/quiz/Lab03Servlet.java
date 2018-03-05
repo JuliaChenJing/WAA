@@ -18,6 +18,10 @@ import javax.servlet.annotation.WebServlet;
 @WebServlet("/QuizServlet")
 public class Lab03Servlet extends HttpServlet {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int trying = 0;
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

@@ -2,6 +2,8 @@ package lab2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +29,7 @@ public class NamesServlet extends HttpServlet {
 		out.print("<h1> Show all Names</h1>");
 		out.println("<form action=ShowNames method='get'>");
 		out.println("<input type=submit value='Show Names'></form>");
-		
+
 		// add
 		out.print("<h1>Add a Name</h1>");
 		out.println("<form action=AddName method='get'>");
@@ -44,6 +46,14 @@ public class NamesServlet extends HttpServlet {
 		out.println("<input   type=submit value='Remove'>");
 		out.println("</form></body>");
 		out.println("</html>");
+
+		HttpSession sess = request.getSession();
+		@SuppressWarnings("unchecked")
+		ArrayList<Person> personList = (ArrayList<Person>) sess.getAttribute("personList");
+		if (personList == null) {
+			personList = new ArrayList<Person>();
+			sess.setAttribute("personList", personList);
+		}
 	}
 
 	@Override
