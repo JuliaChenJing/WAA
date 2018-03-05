@@ -3,6 +3,7 @@ package lab2;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.ServletException;
@@ -39,9 +40,11 @@ public class ShowNamesServlet extends HttpServlet {
 	}
 
 	static void removePersonByKey(String deletedKey) {
-		for (Person p : personList) {
-			if (p.getKey().equals(deletedKey)) {
-				personList.remove(p);
+		Iterator<Person> iterator = personList.iterator();
+		while(iterator.hasNext()) {
+			
+			if (iterator.next().getKey().equals(deletedKey)) {
+				iterator.remove();
 			}
 		}
 	}
