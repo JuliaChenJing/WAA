@@ -1,21 +1,21 @@
 package lab2;
 
 public class Person {
-	int key;
-	String firstName;
-	String lastName;
+	private String key;
+	private String firstName;
+	private String lastName;
 
-	public Person(int key, String firstName, String lastName) {
-		this.key =key;
+	public Person(String key, String firstName, String lastName) {
+		this.key = key;
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
 
-	public int getKey() {
+	public String getKey() {
 		return key;
 	}
 
-	public void setKey(int key) {
+	public void setKey(String key) {
 		this.key = key;
 	}
 
@@ -34,5 +34,4 @@ public class Person {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
 }

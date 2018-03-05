@@ -16,12 +16,11 @@ public class ShowNamesServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	ArrayList<Person> personList = new ArrayList<Person>();
+	static ArrayList<Person> personList = new ArrayList<Person>();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		personList.add(new Person(1, "Julia", "Chen"));
 		PrintWriter out = response.getWriter();
 		out.print("<html><head><title> Names</title></head><body>");
 		out.print("<h1> Show Names</h1>");
@@ -37,5 +36,12 @@ public class ShowNamesServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doPost(request, response);
+	}
+
+	static void removePersonByKey(String deletedKey) {
+		for (Person p : personList) {
+			if (p.getKey() == deletedKey)
+				personList.remove(p);
+		}
 	}
 }

@@ -2,7 +2,6 @@ package lab2;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +26,8 @@ public class NamesServlet extends HttpServlet {
 		// show all names
 		out.print("<h1> Show all Names</h1>");
 		out.println("<form action=ShowNames method='get'>");
-		out.println("<input  type=submit value='Show Names'></form>");
+		out.println("<input type=submit value='Show Names'></form>");
+		
 		// add
 		out.print("<h1>Add a Name</h1>");
 		out.println("<form action=AddName method='get'>");
