@@ -22,6 +22,15 @@ public class NamesServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		HttpSession sess = request.getSession();
+		@SuppressWarnings("unchecked")
+		ArrayList<Person> personList = (ArrayList<Person>) sess.getAttribute("personList");
+		if (personList == null) {
+			personList = new ArrayList<Person>();
+			sess.setAttribute("personList", personList);
+		}
+		
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<body>");
@@ -47,13 +56,7 @@ public class NamesServlet extends HttpServlet {
 		out.println("</form></body>");
 		out.println("</html>");
 
-		HttpSession sess = request.getSession();
-		@SuppressWarnings("unchecked")
-		ArrayList<Person> personList = (ArrayList<Person>) sess.getAttribute("personList");
-		if (personList == null) {
-			personList = new ArrayList<Person>();
-			sess.setAttribute("personList", personList);
-		}
+		
 	}
 
 	@Override

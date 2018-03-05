@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/ShowNames")
 public class ShowNamesServlet extends HttpServlet {
@@ -17,7 +18,7 @@ public class ShowNamesServlet extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	static ArrayList<Person> personList = new ArrayList<Person>();
+	
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -25,6 +26,10 @@ public class ShowNamesServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.print("<html><head><title> Names</title></head><body>");
 		out.print("<h1> Show Names</h1>");
+		HttpSession sess = request.getSession();
+		@SuppressWarnings("unchecked")
+		ArrayList<Person> personList = (ArrayList<Person>) sess.getAttribute("personList");
+		
 		for (Person p : personList) {
 			out.print("<p>key :   " + p.getKey() + "</p>");
 			out.print("<p>first name : " + p.getFirstName() + "</p>");
@@ -39,13 +44,4 @@ public class ShowNamesServlet extends HttpServlet {
 		doPost(request, response);
 	}
 
-	static void removePersonByKey(String deletedKey) {
-		Iterator<Person> iterator = personList.iterator();
-		while(iterator.hasNext()) {
-			
-			if (iterator.next().getKey().equals(deletedKey)) {
-				iterator.remove();
-			}
-		}
-	}
 }
