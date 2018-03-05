@@ -33,7 +33,7 @@ public class RemoveNameServlet extends HttpServlet {
 				iterator.remove();
 			}
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("ShowNames");
+		RequestDispatcher rd = request.getRequestDispatcher("Name");
 		rd.forward(request, response);
 	}
 

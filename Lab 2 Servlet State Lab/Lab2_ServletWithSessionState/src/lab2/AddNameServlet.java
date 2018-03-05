@@ -28,7 +28,7 @@ public class AddNameServlet extends HttpServlet {
 		@SuppressWarnings("unchecked")
 		ArrayList<Person> personList = (ArrayList<Person>) sess.getAttribute("personList");
 		personList.add(new Person(key, firstName, lastName));
-		RequestDispatcher rd = request.getRequestDispatcher("ShowNames");
+		RequestDispatcher rd = request.getRequestDispatcher("Name");
 		rd.forward(request, response);
 	}
 
