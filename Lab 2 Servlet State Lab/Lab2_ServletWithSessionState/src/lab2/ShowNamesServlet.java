@@ -40,8 +40,9 @@ public class ShowNamesServlet extends HttpServlet {
 
 	static void removePersonByKey(String deletedKey) {
 		for (Person p : personList) {
-			if (p.getKey() == deletedKey)
+			if (p.getKey().equals(deletedKey)) {
 				personList.remove(p);
+			}
 		}
 	}
 }
