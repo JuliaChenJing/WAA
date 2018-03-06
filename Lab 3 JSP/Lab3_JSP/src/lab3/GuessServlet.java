@@ -28,16 +28,21 @@ public class GuessServlet extends HttpServlet {
 		final int targetNumber = 8;
 		String output = "";
 
-		int numberInput = Integer.parseInt(request.getParameter("number"));
-
-		if (numberInput == targetNumber) {
-			output = "Correct, Congratulations";
-		} else if (numberInput > targetNumber) {
-			output = "Too high, try again ";
-		} else if (numberInput < targetNumber) {
-			output = "Too low, try again";
+		try {
+			int numberInput = Integer.parseInt(request.getParameter("number"));
+			if (numberInput == targetNumber) {
+				output = "Correct, Congratulations";
+			} else if (numberInput > targetNumber) {
+				output = "Too high, try again ";
+			} else if (numberInput < targetNumber) {
+				output = "Too low, try again";
+			} else
+				output = "Are you sure it is an integer? ";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			// e.printStackTrace();
+			output = "Are you sure it is an integer? ";
 		}
-		output = "Are you sure it is an integer? ";
 		RequestDispatcher dispatcher = request.getRequestDispatcher("guess.jsp");
 		request.setAttribute("output", output);
 		dispatcher.forward(request, response);
