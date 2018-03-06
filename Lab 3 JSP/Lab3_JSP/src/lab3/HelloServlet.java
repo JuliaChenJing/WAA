@@ -24,8 +24,7 @@ public class HelloServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("PostMessages.jsp");
-		dispatcher.forward(request, response);
+		doGet(request, response);
 	}
 
 }

@@ -24,7 +24,22 @@ public class GuessServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("PostMessages.jsp");
+
+		final int targetNumber = 8;
+		String output = "";
+
+		int numberInput = Integer.parseInt(request.getParameter("number"));
+
+		if (numberInput == targetNumber) {
+			output = "Correct, Congratulations";
+		} else if (numberInput > targetNumber) {
+			output = "Too high, try again ";
+		} else if (numberInput < targetNumber) {
+			output = "Too low, try again";
+		}
+		output = "Are you sure it is an integer? ";
+		RequestDispatcher dispatcher = request.getRequestDispatcher("guess.jsp");
+		request.setAttribute("output", output);
 		dispatcher.forward(request, response);
 	}
 
