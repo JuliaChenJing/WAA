@@ -1,7 +1,8 @@
-package lab4;
+package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.RequestDispatcher;
@@ -11,8 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/AddName")
-public class AddNameServlet extends HttpServlet {
+import model.Person;
+
+@WebServlet("/RemoveName")
+public class RemoveNameServlet extends HttpServlet {
 	/**
 	 * 
 	 */
@@ -22,12 +25,21 @@ public class AddNameServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String key = request.getParameter("key");
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
+		String output = "";
 		HttpSession sess = request.getSession();
 		@SuppressWarnings("unchecked")
 		ArrayList<Person> personList = (ArrayList<Person>) sess.getAttribute("personList");
-		personList.add(new Person(key, firstName, lastName));
+		Iterator<Person> iterator = personList.iterator();
+		while (iterator.hasNext()) {
+			if (iterator.next().getKey().equals(key)) {
+				iterator.remove();
+				output = "";
+				request.setAttribute("output", output);
+			} else {
+				output = "ID not found ";
+				request.setAttribute("output", output);
+			}
+		}
 		RequestDispatcher rd = request.getRequestDispatcher("Name");
 		rd.forward(request, response);
 	}

@@ -1,4 +1,4 @@
-package lab4;
+package model;
 
 public class Person {
 	private String key;

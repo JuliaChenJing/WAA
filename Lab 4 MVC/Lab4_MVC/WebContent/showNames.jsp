@@ -34,5 +34,6 @@
 		Key=<input type=text name=key> <br> <input type=submit
 			value='Remove'>
 	</form>
+	<p>${output}</p>
 </body>
 </html>
