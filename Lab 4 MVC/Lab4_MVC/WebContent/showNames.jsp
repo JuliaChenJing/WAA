@@ -6,7 +6,7 @@
 </head>
 <body>
 
-	<h1>Show all Names in jsp</h1>
+	<h1>Show all Names</h1>
 	<form action=Name method='get'>
 		<input type=submit value='Show Names'>
 	</form>
@@ -18,14 +18,14 @@
 		<br>
 	</c:forEach>
 
-	<h1>Add a Name in jsp</h1>
+	<h1>Add a Name</h1>
 	<form action=AddName method='get'>
 		Key=<input type=text name=key> <br> First Name=<input
 			type=text name=firstName> <br> Last Name=<input
 			type=text name=lastName> <input type=submit value='Add'>
 	</form>
 	<br>
-	<h1>Remove a Name in jsp</h1>
+	<h1>Remove a Name</h1>
 	<form action=RemoveName method='get'>
 		Key=<input type=text name=key> <br> <input type=submit
 			value='Remove'>
