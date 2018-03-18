@@ -30,10 +30,14 @@ public class RemoveNameServlet extends HttpServlet {
 		@SuppressWarnings("unchecked")
 		ArrayList<Person> personList = (ArrayList<Person>) sess.getAttribute("personList");
 		Iterator<Person> iterator = personList.iterator();
+		if (personList.size() == 0) {
+			output = "No Name in List";
+			request.setAttribute("output", output);
+		}
 		while (iterator.hasNext()) {
 			if (iterator.next().getKey().equals(key)) {
 				iterator.remove();
-				output = "";
+				output = "Deleted";
 				request.setAttribute("output", output);
 			} else {
 				output = "ID not found ";
@@ -43,7 +47,7 @@ public class RemoveNameServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("Name");
 		rd.forward(request, response);
 	}
-
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

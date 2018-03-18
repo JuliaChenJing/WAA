@@ -21,7 +21,7 @@
 		<p>last name : ${ p.getLastName() }</p>
 		<br>
 	</c:forEach>
-
+	<p style="color: red;">${emptyListNotification}</p>
 	<h1>Add a Name</h1>
 	<form action=AddName method='get'>
 		Key=<input type=text name=key> <br> First Name=<input
@@ -34,6 +34,6 @@
 		Key=<input type=text name=key> <br> <input type=submit
 			value='Remove'>
 	</form>
-	<p>${output}</p>
+	<p style="color: red;">${output}</p>
 </body>
 </html>

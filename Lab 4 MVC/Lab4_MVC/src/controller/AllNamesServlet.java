@@ -25,7 +25,6 @@ public class AllNamesServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		HttpSession sess = request.getSession();
 		@SuppressWarnings("unchecked")
 		ArrayList<Person> personList = (ArrayList<Person>) sess.getAttribute("personList");
@@ -33,11 +32,12 @@ public class AllNamesServlet extends HttpServlet {
 			personList = new ArrayList<Person>();
 			sess.setAttribute("personList", personList);
 		}
-
-		PrintWriter out = response.getWriter();
-		out.println("<html>");
-		out.println("<body>");
-
+		String emptyListNotification;
+		if (personList.size() == 0)
+			emptyListNotification = "No Name in List ";
+		else
+			emptyListNotification = "";
+		request.setAttribute("emptyListNotification", emptyListNotification);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("showNames.jsp");
 		dispatcher.forward(request, response);
 	}
