@@ -1,3 +1,7 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,9 +16,9 @@
 	</form>
 
 	<c:forEach items="${personList}" var="p">
-		<p>key : " + p.getKey() + "</p>
-		<p>first name : " + p.getFirstName() + "</p>
-		<p>last name : " + p.getLastName() + "</p>
+		<p>key : ${ p.getKey()}</p>
+		<p>first name : ${ p.getFirstName()}</p>
+		<p>last name : ${ p.getLastName() }</p>
 		<br>
 	</c:forEach>
 
