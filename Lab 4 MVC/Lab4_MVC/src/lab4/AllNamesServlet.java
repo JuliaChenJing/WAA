@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,8 @@ public class AllNamesServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		
 		HttpSession sess = request.getSession();
 		@SuppressWarnings("unchecked")
 		ArrayList<Person> personList = (ArrayList<Person>) sess.getAttribute("personList");
@@ -33,6 +36,9 @@ public class AllNamesServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<body>");
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("showNames.jsp");
+		dispatcher.forward(request, response);
 
 		// show all names
 		out.print("<h1> Show all Names</h1>");
