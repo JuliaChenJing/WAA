@@ -8,10 +8,6 @@ package mangedBeans;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-/**
- *
- * @author bimal.parajuli
- */
 @ManagedBean
 @RequestScoped
 public class CalculatorJSFManagedBean {

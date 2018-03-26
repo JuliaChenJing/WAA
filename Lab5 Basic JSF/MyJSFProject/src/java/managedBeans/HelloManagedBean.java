@@ -8,10 +8,6 @@ package managedBeans;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-/**
- *
- * @author bimal.parajuli
- */
 @ManagedBean
 @RequestScoped
 public class HelloManagedBean {
