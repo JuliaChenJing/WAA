@@ -23,6 +23,6 @@ public class HelloManagedBean {
     }
 
     public void sayHello() {
-        
+
     }
 }

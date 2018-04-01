@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 package managedBeans;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
 public class CalculatorJSFManagedBean {
+
     double num1, num2;
     double result;
 

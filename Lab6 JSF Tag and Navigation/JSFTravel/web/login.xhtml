@@ -7,10 +7,10 @@
     </h:head>
     <h:body>
         <h:form>
-            user id: <h:inputText value="#{loginJSFManagedBean.userId}" />
-            <br />
-           password: <h:inputText value="#{loginJSFManagedBean.password}" />
-            <br />
+            <h:panelGrid columns="2">
+                user id: <h:inputText value="#{loginJSFManagedBean.userId}" />
+                password: <h:inputSecret value="#{loginJSFManagedBean.password}" />
+            </h:panelGrid>
             <h:commandButton value="Submit" action="#{loginJSFManagedBean.submit}" />
         </h:form>
     </h:body>

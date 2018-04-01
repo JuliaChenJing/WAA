@@ -25,7 +25,6 @@ public class LoginJSFManagedBean {
 
     public String getPassword() {
         return this.password;
-
     }
 
     public void setPassword(String password) {

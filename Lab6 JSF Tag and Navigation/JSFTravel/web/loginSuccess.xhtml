@@ -6,7 +6,17 @@
         <title>Calculate Page</title>
     </h:head>
     <h:body>
-       Welcome Frank Brown
+        Welcome Frank Brown
+        Input your travel information
+        <h:form>
+            <h:panelGrid columns="2">
+                From: <h:inputText value="#{travelInformationJSFManagedBean.from}" />
+                To: <h:inputText value="#{travelInformationJSFManagedBean.to}" />
+                Departure Date: <h:inputText value="#{travelInformationJSFManagedBean.departureDate}" />
+                Return Date: <h:inputText value="#{travelInformationJSFManagedBean.returnDate}" />
+                <h:commandButton value="Submit" action="#{travelInformationJSFManagedBean.submit}" />
+            </h:panelGrid >
+        </h:form>
     </h:body>
 </html>
 
