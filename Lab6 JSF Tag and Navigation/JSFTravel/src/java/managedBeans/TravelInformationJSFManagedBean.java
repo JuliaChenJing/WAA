@@ -21,6 +21,16 @@ public class TravelInformationJSFManagedBean {
     boolean exactTheseDates;
     boolean noStopover;
     String options = "";
+    String isRoundTrip;
+
+    public String getIsRoundTrip() {
+        return isRoundTrip;
+    }
+
+    public void setIsRoundTrip(String isRoundTrip) {
+        this.isRoundTrip = isRoundTrip;
+    }
+
 
     public String getOptions() {
         return options;
