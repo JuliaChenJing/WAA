@@ -73,3 +73,6 @@ local.properties
 .cache-main
 .scala_dependencies
 .worksheet
+/Lab5 Basic JSF/MyJSFProject/nbproject/private/
+/Lab5 Basic JSF/MyJSFProject/build/
+/Lab5 Basic JSF/MyJSFProject/dist/

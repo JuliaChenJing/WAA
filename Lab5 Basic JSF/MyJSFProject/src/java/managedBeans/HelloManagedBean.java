@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package managedBeans;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -11,7 +12,7 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class HelloManagedBean {
 
-    private String name;
+    private String name = "Julia Chen";
 
     public String getName() {
         return name;
@@ -21,7 +22,7 @@ public class HelloManagedBean {
         this.name = name;
     }
 
-    public String sayHello() {
-        return null;
+    public void sayHello() {
+        
     }
 }
