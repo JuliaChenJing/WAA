@@ -33,6 +33,10 @@ public class LoginJSFManagedBean {
     }
 
     public String submit() {
-        return null;
+        if (this.userId.equals("kl01") && this.password.equals("yoyo")) {
+            return "loginSuccess.xhtml";
+        } else {
+            return "loginFailure.xhtml";
+        }
     }
 }
