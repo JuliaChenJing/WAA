@@ -6,7 +6,13 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-       Travel Information Submit Success
+        Travel Information Submit Success
+        <h:panelGrid columns="2">
+            From:  <h:outputText value="#{travelInformationJSFManagedBean.from}"></h:outputText>  
+            To:  <h:outputText value="#{travelInformationJSFManagedBean.to}"></h:outputText>
+            Departure Date:  <h:outputText value="#{travelInformationJSFManagedBean.departureDate}"></h:outputText>
+            Return Date:  <h:outputText value="#{travelInformationJSFManagedBean.returnDate}"></h:outputText>
+        </h:panelGrid>
     </h:body>
 </html>
 
