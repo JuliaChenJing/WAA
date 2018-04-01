@@ -14,7 +14,13 @@
                 To: <h:inputText value="#{travelInformationJSFManagedBean.to}" />
                 Departure Date: <h:inputText value="#{travelInformationJSFManagedBean.departureDate}" />
                 Return Date: <h:inputText value="#{travelInformationJSFManagedBean.returnDate}" />
-                <h:commandButton value="Submit" action="#{travelInformationJSFManagedBean.submit}" />
+                first class <h:selectBooleanCheckbox  value="#{travelInformationJSFManagedBean.firstClass}" >
+                </h:selectBooleanCheckbox>
+                exact these dates  <h:selectBooleanCheckbox value="#{travelInformationJSFManagedBean.exactTheseDates}" >
+                    </h:selectBooleanCheckbox>
+                    no stopover  <h:selectBooleanCheckbox  value="#{travelInformationJSFManagedBean.noStopover}" >
+                    </h:selectBooleanCheckbox>
+                    <h:commandButton value="Submit" action="#{travelInformationJSFManagedBean.submit}" />
             </h:panelGrid >
         </h:form>
     </h:body>
