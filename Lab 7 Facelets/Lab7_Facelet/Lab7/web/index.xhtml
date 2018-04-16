@@ -11,22 +11,22 @@
             <h:panelGrid columns="2" border="1" rules="rows">
                 <f:facet name="header"><h1 style="color: red;">Employees of Acme Inc.</h1></f:facet>
                 <h:form>
-                <h:dataTable border="1" value="#{employeeManagedBean.employeelist}" var="employee">
-                    <h:column>
-                        <h:commandLink value="#{employee.name}" action="#{employeeManagedBean.displayOnlyEmployee(employee.id)}"/>
-                        <h:inputHidden value="#{employee.id}" />
-                    </h:column>
-                </h:dataTable>
+                    <h:dataTable border="1" value="#{employeeManagedBean.employeelist}" var="employee">
+                        <h:column>
+                            <h:commandLink value="#{employee.name}" action="#{employeeManagedBean.displayOnlyEmployee(employee.id)}"/>
+                            <h:inputHidden value="#{employee.id}" />
+                        </h:column>
+                    </h:dataTable>
                     <h:commandButton value="Show All" action="showAll.xhtml"/>
                 </h:form>
                 <h:dataTable border="1"  value="#{employeeManagedBean.onlyEmployee}" var="employee">
                     <h:column>
-                       <f:facet name="header">ID</f:facet>
-                       <h:outputText value="#{employee.id}" />
+                        <f:facet name="header">ID</f:facet>
+                        <h:outputText value="#{employee.id}" />
                     </h:column>
                     <h:column>
-                       <f:facet name="header">Name</f:facet>
-                       <h:outputText value="#{employee.name}" />
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{employee.name}" />
                     </h:column> 
                     <h:column>
                         <f:facet name="header">Phone</f:facet>

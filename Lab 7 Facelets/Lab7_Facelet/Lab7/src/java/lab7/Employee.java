@@ -6,12 +6,14 @@
 package lab7;
 
 public class Employee {
+
     private int id;
     private String name;
     private String phone;
     private double salary;
-    
-    public Employee(){}
+
+    public Employee() {
+    }
 
     public Employee(int id, String name, String phone, double salary) {
         this.id = id;
@@ -51,6 +53,4 @@ public class Employee {
     public void setSalary(double salary) {
         this.salary = salary;
     }
-    
-    
 }
