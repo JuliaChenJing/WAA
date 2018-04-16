@@ -15,21 +15,21 @@ import javax.faces.bean.RequestScoped;
 public class EmployeeManagedBean {
 
     private List<Employee> employeelist = new ArrayList<>();
-    private Employee onlyEmployee;
+    private Employee selectedEmployee;
 
     public EmployeeManagedBean() {
         employeelist.add(new Employee(1432, "Frank Brown", "625-342-1221", 5032.45));
-        employeelist.add(new Employee(1321, "John Doe ", "625-232-1677", 7032.45));
-        employeelist.add(new Employee(1467, "Marry Jones", "625-342-1221", 9032.45));
-        onlyEmployee = employeelist.get(0);
+        employeelist.add(new Employee(1321, "John Doe ", "625-222-1677", 7032.45));
+        employeelist.add(new Employee(1467, "Marry Jones", "625-342-1121", 9032.45));
+        selectedEmployee = employeelist.get(0);
     }
 
-    public void setOnlyEmployee(Employee onlyEmployee) {
-        this.onlyEmployee = onlyEmployee;
+    public void setSelectedEmployee(Employee SelectedEmployee) {
+        this.selectedEmployee = SelectedEmployee;
     }
 
-    public Employee getOnlyEmployee() {
-        return onlyEmployee;
+    public Employee getSelectedEmployee() {
+        return selectedEmployee;
     }
 
     public List<Employee> getEmployeelist() {
@@ -40,10 +40,10 @@ public class EmployeeManagedBean {
         this.employeelist = employeelist;
     }
 
-    public String displayOnlyEmployee(int eid) {
+    public String displaySelectedEmployee(int eid) {
         for (Employee emp : employeelist) {
             if (emp.getId() == eid) {
-                onlyEmployee = emp;
+                selectedEmployee = emp;
             }
         }
         return null;
