@@ -8,10 +8,12 @@
     </h:head>
     <h:body>
         <h:form>
-            <h:panelGrid columns="2">
-                Date: <h:inputText value="#{conversion.dateInput}" />
-                Temperature: <h:inputText value="#{conversion.temperatureInput}" />
-            </h:panelGrid>
+            Date: <h:inputText value="#{conversion.dateInput}" id="date" label="Date">
+                <f:convertDateTime pattern="dd/MM/yy"/>
+            </h:inputText>
+            <h:message for="date" styleClass="errorMessage" style="color:red"/>
+            <br />
+            Temperature: <h:inputText value="#{conversion.temperatureInput}" />
             <h:commandButton value="Submit" action="#{conversion.submit}" />
         </h:form>
     </h:body>
