@@ -7,13 +7,9 @@
         <title>Facelet Show ALL</title>
     </h:head>
     <h:body>
-        <h:form>
-            <h:panelGrid columns="2">
-                Date: <h:inputText value="#{conversion.dateInput}" />
-                Temperature: <h:inputText value="#{conversion.temperatureInput}" />
-            </h:panelGrid>
-            <h:commandButton value="Submit" action="#{conversion.submit}" />
-        </h:form>
+        On<h:outputText value="#{conversion.dateInput}" />
+        <br />
+        The temperature was <h:outputText value="#{conversion.temperatureInput}" />
     </h:body>
 </html>
 
