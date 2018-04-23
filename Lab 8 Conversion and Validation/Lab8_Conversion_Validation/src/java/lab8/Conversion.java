@@ -67,10 +67,10 @@ public class Conversion {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yy");
         try {
             date = simpleDateFormat.parse(dateInput);
+            dateOutput = new SimpleDateFormat("EEEE").format(date) + ", " + DateFormat.getDateInstance().format(date);
         } catch (Exception error) {
             System.out.print(error);
-            // expected output: SyntaxError: unterminated string literal
-            // Note - error messages will vary depending on browser
+            dateOutput = "Wrong date format!";
         }
 //        String[] numberArray = dateInput.split("/");
 //        int day = Integer.parseInt(numberArray[0]);
@@ -81,15 +81,22 @@ public class Conversion {
 //        date.setMonth(month);
 //        date.setYear(year);
 //        date.setDate(day);
-
-        dateOutput = new SimpleDateFormat("EEEE").format(date) + ", " + DateFormat.getDateInstance().format(date);
-        if (temperatureInput.length() >= 2) {
-            char fOrC = temperatureInput.charAt(0);
-            if (fOrC == 'F' || fOrC == 'f') {
-                temperatureOutput = temperatureInput.substring(1) + " Fahrenheit";
-            } else if (fOrC == 'C' || fOrC == 'c') {
-                temperatureOutput = temperatureInput.substring(1) + " Celsius";
+        try {
+            if (temperatureInput.length() >= 2) {
+                char fOrC = temperatureInput.charAt(0);
+                if (fOrC == 'F' || fOrC == 'f') {
+                    temperatureOutput = temperatureInput.substring(1) + " Fahrenheit";
+                } else if (fOrC == 'C' || fOrC == 'c') {
+                    temperatureOutput = temperatureInput.substring(1) + " Celsius";
+                } else {
+                    temperatureOutput = "Wrong temperature format!";
+                }
+            } else {
+                temperatureOutput = "Wrong temperature format!";
             }
+        } catch (Exception error) {
+            System.out.print(error);
+            temperatureOutput = "Wrong temperature format!";
         }
         return "conversionResult.xhtml";
     }
