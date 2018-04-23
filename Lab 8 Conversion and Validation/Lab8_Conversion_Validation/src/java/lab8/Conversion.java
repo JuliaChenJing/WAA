@@ -68,7 +68,7 @@ public class Conversion {
             dateOutput = new SimpleDateFormat("EEEE").format(date) + ", " + DateFormat.getDateInstance().format(date);
         } catch (Exception error) {
             System.out.print(error);
-            dateOutput = "Wrong date format!" + error;
+            dateOutput = "Wrong date format! " + error;
         }
 //        String[] numberArray = dateInput.split("/");
 //        int day = Integer.parseInt(numberArray[0]);
@@ -94,7 +94,7 @@ public class Conversion {
             }
         } catch (Exception error) {
             System.out.print(error);
-            temperatureOutput = "Wrong temperature format!" + error;
+            temperatureOutput = "Wrong temperature format! " + error;
 
         }
         return "conversionResult.xhtml";

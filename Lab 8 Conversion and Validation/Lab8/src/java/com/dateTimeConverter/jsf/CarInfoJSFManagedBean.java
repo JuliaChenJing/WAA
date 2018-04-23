@@ -57,7 +57,6 @@ public class CarInfoJSFManagedBean {
     }
     public String submit(){
         return null;
-    }
-    
+    }  
     
 }
