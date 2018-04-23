@@ -12,17 +12,13 @@ import javax.faces.component.UIComponent;
 import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 
-
-/**
- *
- * @author bimal.parajuli
- */
 @ManagedBean
 @RequestScoped
 public class CarInfoJSFManagedBean {
+
     private String brand;
     private String license;
-    private Long price; 
+    private Long price;
 
     public String getBrand() {
         return brand;
@@ -47,16 +43,17 @@ public class CarInfoJSFManagedBean {
     public void setPrice(Long price) {
         this.price = price;
     }
-    public void validateBrand(FacesContext context, UIComponent toValidate, Object value){
+
+    public void validateBrand(FacesContext context, UIComponent toValidate, Object value) {
         brand = (String) value;
-        if(!(brand.equalsIgnoreCase("BMW") || brand.equalsIgnoreCase("Mercedes"))){
+        if (!(brand.equalsIgnoreCase("BMW") || brand.equalsIgnoreCase("Mercedes"))) {
             ((UIInput) toValidate).setValid(false);
             FacesMessage message = new FacesMessage("Invalid Brand");
             context.addMessage(toValidate.getClientId(context), message);
         }
     }
-    public String submit(){
+
+    public String submit() {
         return null;
-    }  
-    
+    }
 }
