@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Date and Temperature</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            Date <h:inputText id="date" value="#{dataTimeJSFManagedBean.date}" label="Date" required="true">
+                <f:convertDateTime pattern="d/M/yy" />
+            </h:inputText>			
+            <h:message for="date" style="color:red" /> <br /><br />
+
+            Temperature <h:inputText id="temperature" value="#{dataTimeJSFManagedBean.temperature}">
+                <f:converter converterId="TempConverter"></f:converter>
+            </h:inputText>
+            <br />
+            <h:commandButton value="Submit" action="result.xhtml" />
+        </h:form>
+        <hr />
+        <h:form>
+            <h3> Car info</h3>
+            Brand <h:inputText id="brand" value="#{carInfoJSFManagedBean.brand}" validator="#{carInfoJSFManagedBean.validateBrand}" label="Brand" required="true" />			
+            <h:message for="brand" style="color:red" /> <br /><br />
+
+            License nr. <h:inputText id="license" value="#{carInfoJSFManagedBean.license}" label="License Number" required="true">
+                <f:validator validatorId="licenseValidator" />
+            </h:inputText>			
+            <h:message for="license" style="color:red" /> <br /><br />
+
+            Price <h:inputText id="price" value="#{carInfoJSFManagedBean.price}" label="Price" required="true">
+                <f:validateLongRange maximum="100000" minimum="1" />
+            </h:inputText>			
+            <h:message for="price" style="color:red" /> <br /><br />
+
+            <h:commandButton value="Submit" action="#{carInfoJSFManagedBean.submit}"/>
+        </h:form>
+    </h:body>
+</html>
+

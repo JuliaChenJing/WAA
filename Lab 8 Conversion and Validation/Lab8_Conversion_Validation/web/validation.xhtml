@@ -8,12 +8,20 @@
     </h:head>
     <h:body>
         <h:form>
-            <h:panelGrid columns="2">
-                Brand: <h:inputText value="#{validation.brand}" />
+            <h:panelGrid columns="3">
+                Brand:
+                <h:inputText id="brand" value="#{validation.brand}" validator="#{validation.validateBrand}" 
+                             label="Brand" required="true" />			
+                <h:message for="brand" style="color:red" />
 
-                License Number: <h:inputText value="#{validation.licenseNo}" />
+                License Number:  
+                <h:inputText id="license" value="#{validation.licenseNo}" label="License Number" required="true">
+                    <f:validator validatorId="licenseValidator" />
+                </h:inputText>			
+                <h:message for="license" style="color:red" /> 
 
-                Price: <h:inputText  id="price"  label="price" value="#{validation.price}" >
+                Price: 
+                <h:inputText  id="price"  label="price" value="#{validation.price}" >
                     <f:validateDoubleRange minimum="0"  />
                 </h:inputText>
                 <h:message for="price" styleClass="errorMessage" style="color:red"/>
