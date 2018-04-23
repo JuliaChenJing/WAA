@@ -26,32 +26,30 @@ public class StudentController {
 //
 //	}
 
-	@RequestMapping(value = "/registration", method = RequestMethod.GET)
-	public String showForm(@ModelAttribute("student") Student student, Model model) {
-		Map<String, String> genderMap = new HashMap<>();
-		genderMap.put("male", "Male");
-		genderMap.put("female", "Female");
-		model.addAttribute("genderMap", genderMap);
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+    public String showForm(@ModelAttribute("student") Student student, Model model) {
+        Map<String, String> genderMap = new HashMap<>();
+        genderMap.put("male", "Male");
+        genderMap.put("female", "Female");
+        model.addAttribute("genderMap", genderMap);
 
-		return "registration";
-	}
+        return "registration";
+    }
 
-	@RequestMapping(value = "/registration", method = RequestMethod.POST)
-	public String processForm(@Valid @ModelAttribute("student") Student student, BindingResult result, Model model,RedirectAttributes redirectAttributes) {
-		if (result.hasErrors()) {
-			return "registration";
-		}
-		redirectAttributes.addFlashAttribute("student",student);
-		
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    public String processForm(@Valid @ModelAttribute("student") Student student, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
+        if (result.hasErrors()) {
+            return "registration";
+        }
+        redirectAttributes.addFlashAttribute("student", student);
 
-		return "redirect:/success";
+        return "redirect:/success";
+    }
 
-	}
-	
-	@RequestMapping(value = "/success", method = RequestMethod.GET)
-	public String showForm( Model model) {
-	
-		return "success";
-	}
+    @RequestMapping(value = "/success", method = RequestMethod.GET)
+    public String showForm(Model model) {
+
+        return "success";
+    }
 
 }

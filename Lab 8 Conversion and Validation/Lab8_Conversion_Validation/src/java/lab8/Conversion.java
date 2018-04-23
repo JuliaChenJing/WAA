@@ -63,14 +63,13 @@ public class Conversion {
     }
 
     public String submit() {
-
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yy");
         try {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yy");
             date = simpleDateFormat.parse(dateInput);
             dateOutput = new SimpleDateFormat("EEEE").format(date) + ", " + DateFormat.getDateInstance().format(date);
         } catch (Exception error) {
             System.out.print(error);
-            dateOutput = "Wrong date format!";
+            dateOutput = "Wrong date format!" + error;
         }
 //        String[] numberArray = dateInput.split("/");
 //        int day = Integer.parseInt(numberArray[0]);
@@ -96,7 +95,8 @@ public class Conversion {
             }
         } catch (Exception error) {
             System.out.print(error);
-            temperatureOutput = "Wrong temperature format!";
+            temperatureOutput = "Wrong temperature format!" + error;
+
         }
         return "conversionResult.xhtml";
     }
