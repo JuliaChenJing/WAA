@@ -63,12 +63,11 @@ public class Conversion {
     }
 
     public String submit() {
-
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yy");
         try {
             date = simpleDateFormat.parse(dateInput);
         } catch (Exception error) {
-            System.out.print(error);
+            dateOutput = "Error in date Conversion";
             // expected output: SyntaxError: unterminated string literal
             // Note - error messages will vary depending on browser
         }
@@ -83,13 +82,18 @@ public class Conversion {
 //        date.setDate(day);
 
         dateOutput = new SimpleDateFormat("EEEE").format(date) + ", " + DateFormat.getDateInstance().format(date);
-        if (temperatureInput.length() >= 2) {
+
+        if (temperatureInput != null && temperatureInput.length() >= 2) {
             char fOrC = temperatureInput.charAt(0);
             if (fOrC == 'F' || fOrC == 'f') {
                 temperatureOutput = temperatureInput.substring(1) + " Fahrenheit";
             } else if (fOrC == 'C' || fOrC == 'c') {
                 temperatureOutput = temperatureInput.substring(1) + " Celsius";
+            } else {
+                temperatureOutput = "Error in temperature Conversion";
             }
+        } else {
+            temperatureOutput = "Error in temperature Conversion";
         }
         return "conversionResult.xhtml";
     }

@@ -10,17 +10,16 @@
         <h:form>
             <h:panelGrid columns="2">
                 Brand: <h:inputText value="#{validation.brand}" />
-                
-<!--                <form:input path="firstName" />
-                <div>
-                    <form:errors path="firstName" cssStyle="color:red">
 
-                    </form:errors>
-                </div>-->
                 License Number: <h:inputText value="#{validation.licenseNo}" />
-                Price: <h:inputText value="#{validation.price}" />
-            </h:panelGrid>
-            <h:commandButton value="Submit" action="#{validation.submit}" />
+
+                Price: <h:inputText  id="price"  label="price" value="#{validation.price}" >
+                    <f:validateDoubleRange minimum="0"  />
+                </h:inputText>
+                <h:message for="price" styleClass="errorMessage" style="color:red"/>
+                <br />
+                <h:commandButton value="Submit" action="#{validation.submit}" />
+            </h:panelGrid>h
         </h:form>
     </h:body>
 </html>
