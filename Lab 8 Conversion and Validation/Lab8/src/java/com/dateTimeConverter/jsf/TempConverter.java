@@ -10,22 +10,18 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 
-/**
- *
- * @author bimal.parajuli
- */
 @FacesConverter("TempConverter")
-public class TempConverter  implements Converter{
+public class TempConverter implements Converter {
 
     @Override
     public Object getAsObject(FacesContext context, UIComponent component, String value) {
         String temperature = "";
-        if(value.startsWith("C")){
-            temperature = "The temperature was "+value.substring(1)+" Celcius";
-        }else if(value.startsWith("F")){
-            temperature = "The temperature was "+value.substring(1)+" Fahrenheit";
-        }else{
-            temperature ="Wrong Input for temperature";
+        if (value.startsWith("C")) {
+            temperature = "The temperature was " + value.substring(1) + " Celcius";
+        } else if (value.startsWith("F")) {
+            temperature = "The temperature was " + value.substring(1) + " Fahrenheit";
+        } else {
+            temperature = "Wrong Input for temperature";
         }
         return temperature;
     }
@@ -34,5 +30,5 @@ public class TempConverter  implements Converter{
     public String getAsString(FacesContext context, UIComponent component, Object value) {
         return value.toString();
     }
-    
+
 }
