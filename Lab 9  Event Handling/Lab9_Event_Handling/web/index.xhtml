@@ -11,14 +11,14 @@
             <h:panelGrid columns="2"  border="1" rules="rows">
                 <f:facet name="header"><h1 style="color: red;">Employees of Acme Inc.</h1></f:facet>
                 <h:form>
-                    <h:dataTable border="1" value="#{airlineInfoManagedBean.employeelist}" var="employee">
+                    <h:dataTable border="1" value="#{employeeManagedBean.employeelist}" var="employee">
                         <h:column>
-                            <h:commandLink value="#{employee.name}" action="#{airlineInfoManagedBean.displaySelectedEmployee(employee.id)}"/>
+                            <h:commandLink value="#{employee.name}" action="#{employeeManagedBean.displaySelectedEmployee(employee.id)}"/>
                             <h:inputHidden value="#{employee.id}" />
                         </h:column>
                     </h:dataTable>
                 </h:form>
-                <h:dataTable border="1"  value="#{airlineInfoManagedBean.selectedEmployee}" var="employee">
+                <h:dataTable border="1"  value="#{employeeManagedBean.selectedEmployee}" var="employee">
                     <h:column>
                         <f:facet name="header">ID</f:facet>
                         <h:outputText value="#{employee.id}" />
@@ -42,7 +42,7 @@
             <br /> 
 
             <h:panelGrid columns="2"  border="1" rules="rows">
-                <h:dataTable border="1"  value="#{airlineInfoManagedBean.employeelist}" var="employee"  style="width: 100%">
+                <h:dataTable border="1"  value="#{employeeManagedBean.employeelist}" var="employee"  style="width: 100%">
                     <h:column>
                         <f:facet name="header">ID</f:facet>
                         <h:outputText value="#{employee.id}" />

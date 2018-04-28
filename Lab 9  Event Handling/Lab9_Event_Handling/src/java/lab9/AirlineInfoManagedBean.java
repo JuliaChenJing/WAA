@@ -16,7 +16,6 @@ import javax.faces.bean.RequestScoped;
 public class AirlineInfoManagedBean {
 
     private List<AirlineInfo> airlineInfoList = new ArrayList<AirlineInfo>();
-    private Employee selectedEmployee;
 
     public AirlineInfoManagedBean() {
         airlineInfoList.add(new AirlineInfo("Amstardam", "New York", "12/11/06", "KLM", 790.80));
@@ -28,19 +27,11 @@ public class AirlineInfoManagedBean {
         airlineInfoList.add(new AirlineInfo("Amstardam", "New York", "12/11/06", "United Airlines", 1050.00));
     }
 
-    public void setSelectedEmployee(Employee SelectedEmployee) {
-        this.selectedEmployee = SelectedEmployee;
-    }
-
-    public Employee getSelectedEmployee() {
-        return selectedEmployee;
-    }
-
     public List<AirlineInfo> getAirlineInfoList() {
         return airlineInfoList;
     }
 
-    public void setEmployeelist(List<AirlineInfo> airlineInfoList) {
+    public void setAirlineInfoList(List<AirlineInfo> airlineInfoList) {
         this.airlineInfoList = airlineInfoList;
     }
 }

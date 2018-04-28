@@ -5,12 +5,21 @@
  */
 package lab9;
 
-import java.util.Date;
-
 public class AirlineInfo {
+
     String from;
     String to;
-    Date date;
+    String date;
+    String airline;
+    double price;
+
+    public AirlineInfo(String from, String to, String date, String airline, double price) {
+        this.from = from;
+        this.to = to;
+        this.date = date;
+        this.airline = airline;
+        this.price = price;
+    }
 
     public String getFrom() {
         return from;
@@ -28,11 +37,11 @@ public class AirlineInfo {
         this.to = to;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -44,14 +53,11 @@ public class AirlineInfo {
         this.airline = airline;
     }
 
-    public float getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(double price) {
         this.price = price;
     }
-    String airline;
-    float price;
-
 }
