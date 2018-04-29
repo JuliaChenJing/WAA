@@ -5,7 +5,6 @@
  */
 package lab9;
 
-import lab7.*;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
@@ -14,6 +13,16 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class AirlineInfoManagedBean {
+
+    String selectedAirline;
+
+    public String getSelectedAirline() {
+        return selectedAirline;
+    }
+
+    public void setSelectedAirline(String selectedAirline) {
+        this.selectedAirline = selectedAirline;
+    }
 
     private List<AirlineInfo> airlineInfoList = new ArrayList<AirlineInfo>();
 
