@@ -43,4 +43,18 @@ public class AirlineInfoManagedBean {
     public void setAirlineInfoList(List<AirlineInfo> airlineInfoList) {
         this.airlineInfoList = airlineInfoList;
     }
+
+    public String[] airlineValue = {"All", "KLM", "North West", "United Airlines"};
+
+    public String[] getAirlineValue() {
+        return this.airlineValue;
+    }
+
+    public void submit() {
+        selectedAirline = "KLM";
+    }
+
+    public void reset() {
+        selectedAirline = "All";
+    }
 }

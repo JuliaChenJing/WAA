@@ -13,7 +13,6 @@
         <h:form>
 
             <h:panelGrid columns="2">
-
                 Selected country locale : 
                 <h:inputText id="country" value="#{country.localeCode}" size="20" />
 
@@ -22,7 +21,6 @@
                                  valueChangeListener="#{country.countryLocaleCodeChanged}">
                     <f:selectItems value="#{country.countryInMap}" />
                 </h:selectOneMenu>
-
                 <ui:remove>
                     <!-- comment above valueChangeListener attribute and delete the ui:remove tags for testing -->
                     Select a country {ValueChangeListener class}: 
@@ -31,7 +29,6 @@
                         <f:selectItems value="#{country.countryInMap}" />
                     </h:selectOneMenu>
                 </ui:remove>
-
             </h:panelGrid>
 
         </h:form>
