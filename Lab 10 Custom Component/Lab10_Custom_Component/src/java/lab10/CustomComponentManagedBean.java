@@ -36,19 +36,42 @@ public class CustomComponentManagedBean {
     }
 
     public void monthIncrease() {
-
-        this.monthInput = "" + (Integer.parseInt(this.monthInput) + 1);
+        if (Integer.parseInt(this.monthInput) + 1 > 12) {
+            this.monthInput = "12";
+        } else if (Integer.parseInt(this.monthInput) - 1 < 1) {
+            this.monthInput = "1";
+        } else {
+            this.monthInput = "" + (Integer.parseInt(this.monthInput) + 1);
+        }
     }
 
     public void monthDecrease() {
-        this.monthInput = "" + (Integer.parseInt(this.monthInput) - 1);
+        if (Integer.parseInt(this.monthInput) + 1 > 12) {
+            this.monthInput = "12";
+        } else if (Integer.parseInt(this.monthInput) - 1 < 1) {
+            this.monthInput = "1";
+        } else {
+            this.monthInput = "" + (Integer.parseInt(this.monthInput) - 1);
+        }
     }
 
     public void yearIncrease() {
-        this.yearInput = "" + (Integer.parseInt(this.yearInput) + 1);
+        if (Integer.parseInt(this.yearInput) + 1 > 2022) {
+            this.yearInput = "2022";
+        } else if (Integer.parseInt(this.yearInput) - 1 < 2018) {
+            this.yearInput = "2018";
+        } else {
+            this.yearInput = "" + (Integer.parseInt(this.yearInput) + 1);
+        }
     }
 
     public void yearDecrease() {
-        this.yearInput = "" + (Integer.parseInt(this.yearInput) + 1);
+        if (Integer.parseInt(this.yearInput) + 1 > 2022) {
+            this.yearInput = "2022";
+        } else if (Integer.parseInt(this.yearInput) - 1 < 2018) {
+            this.yearInput = "2018";
+        } else {
+            this.yearInput = "" + (Integer.parseInt(this.yearInput) + 1);
+        }
     }
 }
