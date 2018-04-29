@@ -16,6 +16,16 @@ public class CustomComponentManagedBean {
     String monthInput;
 
     public String submit() {
+        if (Integer.parseInt(this.monthInput) > 12) {
+            this.monthInput = "12";
+        } else if (Integer.parseInt(this.monthInput) < 1) {
+            this.monthInput = "1";
+        }
+        if (Integer.parseInt(this.yearInput) + 1 > 2022) {
+            this.yearInput = "2022";
+        } else if (Integer.parseInt(this.yearInput) < 2018) {
+            this.yearInput = "2018";
+        }
         return "customComponentResult.xhtml";
     }
 
@@ -35,43 +45,49 @@ public class CustomComponentManagedBean {
         this.monthInput = monthInput;
     }
 
-    public void monthIncrease() {
+    public String monthIncrease() {
+        System.out.println("monthIncrease + this.monthInput: " + this.monthInput);
         if (Integer.parseInt(this.monthInput) + 1 > 12) {
             this.monthInput = "12";
-        } else if (Integer.parseInt(this.monthInput) - 1 < 1) {
+        } else if (Integer.parseInt(this.monthInput) < 1) {
             this.monthInput = "1";
         } else {
             this.monthInput = "" + (Integer.parseInt(this.monthInput) + 1);
         }
+        return "index.xhtml";
     }
 
-    public void monthDecrease() {
-        if (Integer.parseInt(this.monthInput) + 1 > 12) {
+    public String monthDecrease() {
+        System.out.println("monthDecrease + this.monthInput: " + this.monthInput);
+        if (Integer.parseInt(this.monthInput) > 12) {
             this.monthInput = "12";
         } else if (Integer.parseInt(this.monthInput) - 1 < 1) {
             this.monthInput = "1";
         } else {
             this.monthInput = "" + (Integer.parseInt(this.monthInput) - 1);
         }
+        return "index.xhtml";
     }
 
-    public void yearIncrease() {
+    public String yearIncrease() {
         if (Integer.parseInt(this.yearInput) + 1 > 2022) {
+            this.yearInput = "2022";
+        } else if (Integer.parseInt(this.yearInput) < 2018) {
+            this.yearInput = "2018";
+        } else {
+            this.yearInput = "" + (Integer.parseInt(this.yearInput) + 1);
+        }
+        return "index.xhtml";
+    }
+
+    public String yearDecrease() {
+        if (Integer.parseInt(this.yearInput) > 2022) {
             this.yearInput = "2022";
         } else if (Integer.parseInt(this.yearInput) - 1 < 2018) {
             this.yearInput = "2018";
         } else {
             this.yearInput = "" + (Integer.parseInt(this.yearInput) + 1);
         }
-    }
-
-    public void yearDecrease() {
-        if (Integer.parseInt(this.yearInput) + 1 > 2022) {
-            this.yearInput = "2022";
-        } else if (Integer.parseInt(this.yearInput) - 1 < 2018) {
-            this.yearInput = "2018";
-        } else {
-            this.yearInput = "" + (Integer.parseInt(this.yearInput) + 1);
-        }
+        return "index.xhtml";
     }
 }
