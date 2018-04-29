@@ -16,15 +16,21 @@ public class CustomComponentManagedBean {
     String monthInput;
 
     public String submit() {
-        if (Integer.parseInt(this.monthInput) > 12) {
-            this.monthInput = "12";
-        } else if (Integer.parseInt(this.monthInput) < 1) {
-            this.monthInput = "1";
-        }
-        if (Integer.parseInt(this.yearInput) + 1 > 2022) {
-            this.yearInput = "2022";
-        } else if (Integer.parseInt(this.yearInput) < 2018) {
-            this.yearInput = "2018";
+        try {
+
+            if (Integer.parseInt(this.monthInput) > 12) {
+                this.monthInput = "12";
+            } else if (Integer.parseInt(this.monthInput) < 1) {
+                this.monthInput = "1";
+            }
+            if (Integer.parseInt(this.yearInput) + 1 > 2022) {
+                this.yearInput = "2022";
+            } else if (Integer.parseInt(this.yearInput) < 2018) {
+                this.yearInput = "2018";
+            }
+        } catch (Exception e) {
+            this.yearInput = e.toString();
+            this.monthInput = "Invalid Month or Year";
         }
         return "customComponentResult.xhtml";
     }
