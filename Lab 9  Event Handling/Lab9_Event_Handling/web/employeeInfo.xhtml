@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Employee Info</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:panelGrid columns="2"  border="1" rules="rows">
+                <f:facet name="header"><h1 style="color: red;">Employees of Acme Inc.</h1></f:facet>
+                <h:form>
+                    <h:dataTable border="1" value="#{employeeManagedBean.employeelist}" var="employee">
+                        <h:column>
+                            <h:commandLink value="#{employee.name}" action="#{employeeManagedBean.displaySelectedEmployee(employee.id)}"/>
+                            <h:inputHidden value="#{employee.id}" />
+                        </h:column>
+                    </h:dataTable>
+                </h:form>
+                <h:dataTable border="1"  value="#{employeeManagedBean.selectedEmployee}" var="employee">
+                    <h:column>
+                        <f:facet name="header">ID</f:facet>
+                        <h:outputText value="#{employee.id}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{employee.name}" />
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">Phone</f:facet>
+                        <h:outputText value="#{employee.phone}" />
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">Salary</f:facet>
+                        <h:outputText value="#{employee.salary}" />
+                    </h:column>
+                </h:dataTable>
+            </h:panelGrid>
+
+            <br />
+            <br /> 
+
+            <h:panelGrid columns="2"  border="1" rules="rows">
+                <h:dataTable border="1"  value="#{employeeManagedBean.employeelist}" var="employee"  style="width: 100%">
+                    <h:column>
+                        <f:facet name="header">ID</f:facet>
+                        <h:outputText value="#{employee.id}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{employee.name}" />
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">Phone</f:facet>
+                        <h:outputText value="#{employee.phone}" />
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">Salary</f:facet>
+                        <h:outputText value="#{employee.salary}" />
+                    </h:column>
+                </h:dataTable>
+            </h:panelGrid>
+        </f:view>
+    </h:body>
+</html>
+

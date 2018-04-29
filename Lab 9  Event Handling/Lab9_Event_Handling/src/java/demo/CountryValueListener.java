@@ -1,4 +1,4 @@
-package com.mkyong;
+package demo;
 
 import javax.faces.context.FacesContext;
 import javax.faces.event.AbortProcessingException;

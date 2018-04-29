@@ -7,96 +7,15 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <f:view>
-            <h:panelGrid columns="2"  border="1" rules="rows">
-                <f:facet name="header"><h1 style="color: red;">Employees of Acme Inc.</h1></f:facet>
-                <h:form>
-                    <h:dataTable border="1" value="#{employeeManagedBean.employeelist}" var="employee">
-                        <h:column>
-                            <h:commandLink value="#{employee.name}" action="#{employeeManagedBean.displaySelectedEmployee(employee.id)}"/>
-                            <h:inputHidden value="#{employee.id}" />
-                        </h:column>
-                    </h:dataTable>
-                </h:form>
-                <h:dataTable border="1"  value="#{employeeManagedBean.selectedEmployee}" var="employee">
-                    <h:column>
-                        <f:facet name="header">ID</f:facet>
-                        <h:outputText value="#{employee.id}" />
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Name</f:facet>
-                        <h:outputText value="#{employee.name}" />
-                    </h:column> 
-                    <h:column>
-                        <f:facet name="header">Phone</f:facet>
-                        <h:outputText value="#{employee.phone}" />
-                    </h:column> 
-                    <h:column>
-                        <f:facet name="header">Salary</f:facet>
-                        <h:outputText value="#{employee.salary}" />
-                    </h:column>
-                </h:dataTable>
-            </h:panelGrid>
-
+        <h:form>
+            <h:commandButton value="Lab  9  Airline Info" action="airlineInfo.xhtml"/>
             <br />
-            <br /> 
-
-            <h:panelGrid columns="2"  border="1" rules="rows">
-                <h:dataTable border="1"  value="#{employeeManagedBean.employeelist}" var="employee"  style="width: 100%">
-                    <h:column>
-                        <f:facet name="header">ID</f:facet>
-                        <h:outputText value="#{employee.id}" />
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">Name</f:facet>
-                        <h:outputText value="#{employee.name}" />
-                    </h:column> 
-                    <h:column>
-                        <f:facet name="header">Phone</f:facet>
-                        <h:outputText value="#{employee.phone}" />
-                    </h:column> 
-                    <h:column>
-                        <f:facet name="header">Salary</f:facet>
-                        <h:outputText value="#{employee.salary}" />
-                    </h:column>
-                </h:dataTable>
-            </h:panelGrid>
-
+            <h:commandButton value="Lab  7  Employee Info" action="employeeInfo.xhtml"/>
             <br />
-            <br /> 
-            Airline:
-            <h:selectOneMenu value="#{airlineInfoManagedBean.selectedAirline}">
-                <f:selectItem itemValue="All" itemLabel="All" />
-                <f:selectItem itemValue="KLM" itemLabel="KLM" />
-                <f:selectItem itemValue="United Airlines" itemLabel="United Airlines" />
-                <f:selectItem itemValue="North West" itemLabel="North West" />
-            </h:selectOneMenu>
-
-            <h:panelGrid columns="2"  border="1" rules="rows">
-                <h:dataTable border="1"  value="#{airlineInfoManagedBean.airlineInfoList}" var="airlineInfo"  style="width: 100%">
-                    <h:column>
-                        <f:facet name="header">From</f:facet>
-                        <h:outputText value="#{airlineInfo.from}" />
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">To</f:facet>
-                        <h:outputText value="#{airlineInfo.to}" />
-                    </h:column>          
-                    <h:column>
-                        <f:facet name="header">Airline</f:facet>
-                        <h:outputText value="#{airlineInfo.airline}" />
-                    </h:column> 
-                    <h:column>
-                        <f:facet name="header">Date</f:facet>
-                        <h:outputText value="#{airlineInfo.date}" />
-                    </h:column> 
-                    <h:column>
-                        <f:facet name="header">Price</f:facet>
-                        <h:outputText value="#{airlineInfo.price}" />
-                    </h:column>
-                </h:dataTable>
-            </h:panelGrid>
-        </f:view>
+            <h:commandButton value="Demo 1  Select Coffee" action="selectCoffee.xhtml"/>
+            <br />
+            <h:commandButton value="Demo 2  Select Country" action="selectCountry.xhtml"/>
+        </h:form>
     </h:body>
 </html>
 

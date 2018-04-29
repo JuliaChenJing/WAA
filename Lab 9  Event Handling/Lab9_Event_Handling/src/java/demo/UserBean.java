@@ -1,4 +1,4 @@
-package com.mkyong;
+package demo;
 
 import java.io.Serializable;
 import java.util.LinkedHashMap;
