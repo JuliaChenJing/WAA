@@ -7,7 +7,40 @@
         <title>Lab 10 : Custom Component</title>
     </h:head>
     <h:body>
-
+        <h:form>
+            <h:panelGrid columns="3">
+                Brand:
+                <h:inputText id="brand" 
+                             value="#{validationManagedBean.brand}" 
+                             validator="#{validationManagedBean.validateBrand}" 
+                             label="Brand"
+                             required="true" />			
+                <h:message for="brand" 
+                           style="color:red" />
+                License Number:  
+                <h:inputText id="license" 
+                             value="#{validationManagedBean.licenseNo}" 
+                             label="License Number" required="true">
+                    <f:validator validatorId="licenseValidator" />
+                </h:inputText>			
+                <h:message for="license" style="color:red" /> 
+                Price: 
+                <h:inputText  id="price" 
+                              label="price" 
+                              value="#{validationManagedBean.price}" >
+                    <f:validateDoubleRange minimum="0"  />
+                </h:inputText>
+                <h:message for="price" 
+                           styleClass="errorMessage" 
+                           style="color:red"/>
+                <br />
+                <h:commandButton value="Submit"
+                                 action="#{validationManagedBean.submit}" />
+            </h:panelGrid>
+        </h:form>
+        <br />
+        <br />
+        <br />
         <h:form>
             Date: <h:inputText value="#{conversionManagedBean.dateInput}" id="date" label="Date">
                 <!--<f:convertDateTime pattern="dd/MM/yy"/>-->
@@ -17,22 +50,26 @@
             Temperature: <h:inputText value="#{conversionManagedBean.temperatureInput}" />
             <br />
             <h:commandButton value="Submit" action="#{conversionManagedBean.submit}" />
-
-            <br />
-            <br />
-            <br />
-
+        </h:form>
+        <br />
+        <br />
+        <br />
+        <h:form>
             Please enter your credit card expiration month and year:
             <br/>
             Month:  <h:inputText value="#{customComponentManagedBean.monthInput}"
                                  id="month" 
                                  label="Month">
             </h:inputText>
+            <h:commandButton value="increase" action="#{conversionManagedBean.monthIncrease}" />
+            <h:commandButton value="decrease" action="#{conversionManagedBean.monthDecrease}" />
             <br/>
             Year:  <h:inputText value="#{customComponentManagedBean.yearInput}"
                                 id="year" 
                                 label="Year">
             </h:inputText>
+            <h:commandButton value="increase" action="#{conversionManagedBean.yearIncrease}" />
+            <h:commandButton value="decrease" action="#{conversionManagedBean.yearDecrease}" />
             <br/>
             <h:commandButton value="Next" action="#{customComponentManagedBean.submit}" />
         </h:form>

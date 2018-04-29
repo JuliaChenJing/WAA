@@ -34,4 +34,21 @@ public class CustomComponentManagedBean {
     public void setMonthInput(String monthInput) {
         this.monthInput = monthInput;
     }
+
+    public void monthIncrease() {
+
+        this.monthInput = "" + (Integer.parseInt(this.monthInput) + 1);
+    }
+
+    public void monthDecrease() {
+        this.monthInput = "" + (Integer.parseInt(this.monthInput) - 1);
+    }
+
+    public void yearIncrease() {
+        this.yearInput = "" + (Integer.parseInt(this.yearInput) + 1);
+    }
+
+    public void yearDecrease() {
+        this.yearInput = "" + (Integer.parseInt(this.yearInput) + 1);
+    }
 }
