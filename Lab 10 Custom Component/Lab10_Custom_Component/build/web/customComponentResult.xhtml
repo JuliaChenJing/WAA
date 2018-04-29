@@ -7,10 +7,15 @@
         <title>Lab 10 : Custom Component</title>
     </h:head>
     <h:body>
-        Your credit card expiration month and year is :  
-        <h:outputText value="#{customComponentManagedBean.monthInput}" />
-        /
-        <h:outputText value="#{customComponentManagedBean.yearInput}" />
+        <h:form>
+            Your credit card expiration month and year is :  
+            <h:outputText value="#{customComponentManagedBean.monthInput}" />
+            /
+            <h:outputText value="#{customComponentManagedBean.yearInput}" />
+            <br />
+            <h:commandButton value="Try Again"
+                             action="index.xhtml" />
+        </h:form>   
     </h:body>
 </html>
 

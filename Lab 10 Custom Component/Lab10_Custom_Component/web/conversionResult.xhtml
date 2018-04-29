@@ -7,9 +7,14 @@
         <title>Lab 10 : Custom Component</title>
     </h:head>
     <h:body>
-        On <h:outputText value="#{conversionManagedBean.dateOutput}" />
-        <br />
-        The temperature was <h:outputText value="#{conversionManagedBean.temperatureOutput}" />
+        <h:form>
+            On <h:outputText value="#{conversionManagedBean.dateOutput}" />
+            <br />
+            The temperature was <h:outputText value="#{conversionManagedBean.temperatureOutput}" />
+            <br />
+            <h:commandButton value="Try Again"
+                             action="index.xhtml" />
+        </h:form>
     </h:body>
 </html>
 
