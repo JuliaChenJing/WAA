@@ -13,7 +13,7 @@ import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
-public class Conversion {
+public class ConversionManagedBean {
 
     private String dateInput;
     private Date date;
@@ -95,6 +95,7 @@ public class Conversion {
         } catch (Exception error) {
             System.out.print(error);
             temperatureOutput = "Wrong temperature format! " + error;
+
         }
         return "conversionResult.xhtml";
     }
