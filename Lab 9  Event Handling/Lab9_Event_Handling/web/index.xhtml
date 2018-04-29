@@ -61,6 +61,41 @@
                     </h:column>
                 </h:dataTable>
             </h:panelGrid>
+
+            <br />
+            <br /> 
+            Airline:
+            <h:selectOneMenu value="#{user.favCoffee1}">
+                <f:selectItem itemValue="All" itemLabel="All" />
+                <f:selectItem itemValue="KLM" itemLabel="KLM" />
+                <f:selectItem itemValue="United Airlines" itemLabel="United Airlines" />
+                <f:selectItem itemValue="North West" itemLabel="North West" />
+            </h:selectOneMenu>
+
+            <h:panelGrid columns="2"  border="1" rules="rows">
+                <h:dataTable border="1"  value="#{airlineInfoManagedBean.airlineInfoList}" var="airlineInfo"  style="width: 100%">
+                    <h:column>
+                        <f:facet name="header">From</f:facet>
+                        <h:outputText value="#{airlineInfo.from}" />
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">To</f:facet>
+                        <h:outputText value="#{airlineInfo.to}" />
+                    </h:column>          
+                    <h:column>
+                        <f:facet name="header">Airline</f:facet>
+                        <h:outputText value="#{airlineInfo.airline}" />
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">Date</f:facet>
+                        <h:outputText value="#{airlineInfo.date}" />
+                    </h:column> 
+                    <h:column>
+                        <f:facet name="header">Price</f:facet>
+                        <h:outputText value="#{airlineInfo.price}" />
+                    </h:column>
+                </h:dataTable>
+            </h:panelGrid>
         </f:view>
     </h:body>
 </html>
