@@ -15,8 +15,8 @@ public class CustomComponentManagedBean {
     String yearInput;
     String monthInput;
 
-    public void submit() {
-
+    public String submit() {
+        return "customComponentResult.xhtml";
     }
 
     public String getYearInput() {
