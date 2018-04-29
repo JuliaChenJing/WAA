@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab8;
+package lab10;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -95,7 +95,6 @@ public class Conversion {
         } catch (Exception error) {
             System.out.print(error);
             temperatureOutput = "Wrong temperature format! " + error;
-
         }
         return "conversionResult.xhtml";
     }

@@ -8,9 +8,11 @@
     </h:head>
     <h:body>
         <h:form>
-            <h:commandButton value="JSF Conversion" action="conversion.xhtml"/>
-            <br />
-            <h:commandButton value="JSF Validation" action="validation.xhtml"/>
+            Date: <h:inputText value="#{conversion.dateInput}"
+                               id="date" 
+                               label="Date">
+            </h:inputText>
+            <h:commandButton value="Submit" action="#{conversion.submit}" />
         </h:form>
     </h:body>
 </html>
