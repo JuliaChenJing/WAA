@@ -19,6 +19,14 @@ public class AirlineInfoManagedBean {
     private List<AirlineInfo> airlineInfoList;
     private List<AirlineInfo> selectedAirlineInfoList;
 
+    public List<AirlineInfo> getSelectedAirlineInfoList() {
+        return selectedAirlineInfoList;
+    }
+
+    public void setSelectedAirlineInfoList(List<AirlineInfo> selectedAirlineInfoList) {
+        this.selectedAirlineInfoList = selectedAirlineInfoList;
+    }
+
     public String getSelectedAirline() {
         return selectedAirline;
     }
@@ -36,6 +44,7 @@ public class AirlineInfoManagedBean {
         airlineInfoList.add(new AirlineInfo("Amstardam", "New York", "12/11/06", "North West", 875.00));
         airlineInfoList.add(new AirlineInfo("Amstardam", "New York", "12/11/06", "KLM", 989.00));
         airlineInfoList.add(new AirlineInfo("Amstardam", "New York", "12/11/06", "United Airlines", 1050.00));
+        selectedAirlineInfoList = airlineInfoList;
     }
 
     public List<AirlineInfo> getAirlineInfoList() {
@@ -52,21 +61,25 @@ public class AirlineInfoManagedBean {
         return this.airlineValue;
     }
 
-    public void submit() {
+    public String submitAirline() {
+        System.out.println("airline submitted");
         selectedAirline = "KLM";
+        return "airlineInfo.xhtml";
     }
 
-    public void reset() {
-        selectedAirline = "All";
+    public String resetToAll() {
+        this.selectedAirline = "All";
+        return "airlineInfo.xhtml";
     }
 
-    public void selectedAirlineChanged(ValueChangeEvent e) {
+    public String selectedAirlineChanged(ValueChangeEvent e) {
+        System.out.println(" selectedAirlineChanged");
         if (e.getNewValue().toString().equals("All")) {
-
             this.selectedAirlineInfoList = airlineInfoList;
         } else {
             this.selectedAirlineInfoList = getSelectedAirlineInfoList(e.getNewValue().toString());
         }
+        return "airlineInfo.xhtml";
     }
 
     public List<AirlineInfo> getSelectedAirlineInfoList(String selectedAirline) {
@@ -76,6 +89,6 @@ public class AirlineInfoManagedBean {
                 this.selectedAirlineInfoList.add(item);
             }
         }
-        return airlineInfoList;
+        return selectedAirlineInfoList;
     }
 }
