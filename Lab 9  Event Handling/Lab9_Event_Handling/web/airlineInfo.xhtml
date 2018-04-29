@@ -18,25 +18,20 @@
                     <h:inputText id="country" value="#{country.localeCode}" size="20" />
 
                     Select a country {method binding}: 
+
+
                     <h:selectOneMenu value="#{country.localeCode}" onchange="submit()"
                                      valueChangeListener="#{country.countryLocaleCodeChanged}">
                         <f:selectItems value="#{country.countryInMap}" />
-                    </h:selectOneMenu>
-                    <ui:remove>
-                        <!-- comment above valueChangeListener attribute and delete the ui:remove tags for testing -->
-                        Select a country {ValueChangeListener class}: 
-                        <h:selectOneMenu value="#{country.localeCode}" onchange="submit()">
-                            <f:valueChangeListener type="com.mkyong.CountryValueListener" />
-                            <f:selectItems value="#{country.countryInMap}" />
-                        </h:selectOneMenu>
-                    </ui:remove>
+                    </h:selectOneMenu>                   
                 </h:panelGrid>
 
             </h:form>
 
             <h:form>      
                 Airline:
-                <h:selectOneMenu value="#{airlineInfoManagedBean.selectedAirline}">
+                <h:selectOneMenu value="#{airlineInfoManagedBean.selectedAirline}" onchange="submit()"
+                                 valueChangeListener="#{airlineInfoManagedBean.selectedAirlineChanged}">
                     <f:selectItems value="#{airlineInfoManagedBean.airlineValue}" var="airline"
                                    itemLabel="#{airline}" itemValue="#{airline}" />                  
                 </h:selectOneMenu>
