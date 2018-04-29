@@ -15,20 +15,25 @@
             <!--<h:message for="date" styleClass="errorMessage" style="color:red"/>-->
             <br />
             Temperature: <h:inputText value="#{conversionManagedBean.temperatureInput}" />
+            <br />
             <h:commandButton value="Submit" action="#{conversionManagedBean.submit}" />
 
             <br />
             <br />
+            <br />
 
             Please enter your credit card expiration month and year:
+            <br/>
             Month:  <h:inputText value="#{customComponentManagedBean.monthInput}"
                                  id="month" 
                                  label="Month">
             </h:inputText>
+            <br/>
             Year:  <h:inputText value="#{customComponentManagedBean.yearInput}"
                                 id="year" 
                                 label="Year">
             </h:inputText>
+            <br/>
             <h:commandButton value="Next" action="#{customComponentManagedBean.submit}" />
         </h:form>
     </h:body>
