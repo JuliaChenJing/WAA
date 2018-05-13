@@ -11,17 +11,13 @@ import java.util.Locale;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
-/**
- *
- * @author bimal.parajuli
- */
 @ManagedBean
 @RequestScoped
 public class CountryJSFManagedBean {
 
     private String countryName;
     private List<String> countryList = new ArrayList<>();
-    private List<String> newcountryList = new ArrayList<>();
+    private List<String> newCountryList = new ArrayList<>();
 
     public CountryJSFManagedBean() {
         String[] locales = Locale.getISOCountries();
@@ -32,18 +28,18 @@ public class CountryJSFManagedBean {
     }
    
     public void updatedCountries(){
-        newcountryList.clear();
+        newCountryList.clear();
         countryList.stream().filter((country) -> (country.toLowerCase().startsWith(countryName.toLowerCase()) || country.startsWith(countryName))).forEachOrdered((country) -> {
-            newcountryList.add(country);
+            newCountryList.add(country);
         });
     }
     
-    public List<String> getNewcountryList() {
-        return newcountryList;
+    public List<String> getNewCountryList() {
+        return newCountryList;
     }
 
-    public void setNewcountryList(List<String> newcountryList) {
-        this.newcountryList = newcountryList;
+    public void setNewcountryList(List<String> newCountryList) {
+        this.newCountryList = newCountryList;
     }
 
     public String getCountryName() {
@@ -61,7 +57,4 @@ public class CountryJSFManagedBean {
     public void setCountryList(List<String> countryList) {
         this.countryList = countryList;
     }
-
-    
-
 }
