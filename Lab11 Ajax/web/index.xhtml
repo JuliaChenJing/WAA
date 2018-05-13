@@ -10,12 +10,12 @@
         <h:form>
             Type Country : 
             <h:inputText value="#{countryManagedBean.countryNameInput}">
-                <f:ajax event="keyup" render="countryList" listener="#{countryManagedBean.updateCountryList}" />
+                <f:ajax event="keyup" render="ajaxCountryList" listener="#{countryManagedBean.filterCountryList}" />
             </h:inputText>
             <br/>
             <br />
-            <h:selectOneListbox id="countryList"  value="#{countryManagedBean.countryNameInput}" >
-                <f:selectItems value="#{countryManagedBean.updatedCountryList}" />
+            <h:selectOneListbox id="ajaxCountryList"  >
+                <f:selectItems value="#{countryManagedBean.filteredCountryList}" />
             </h:selectOneListbox>        
         </h:form>
     </h:body>

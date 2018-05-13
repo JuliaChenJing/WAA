@@ -16,30 +16,38 @@ import javax.faces.bean.RequestScoped;
 public class CountryManagedBean {
 
     private String countryNameInput;
-    private List<String> countryList = new ArrayList<>();
-    private List<String> updatedCountryList = new ArrayList<>();
+    private List<String> fullCountryList = new ArrayList<>();
+    private List<String> filteredCountryList = new ArrayList<>();
 
     public CountryManagedBean() {
         String[] locales = Locale.getISOCountries();
         for (String countryCode : locales) {
             Locale obj = new Locale("", countryCode);
-            countryList.add(obj.getDisplayCountry());
+            fullCountryList.add(obj.getDisplayCountry());
         }
     }
 
-    public void updateCountryList() {
-        updatedCountryList.clear();
-        countryList.stream().filter((country) -> (country.toLowerCase().startsWith(countryNameInput.toLowerCase()) || country.startsWith(countryNameInput))).forEachOrdered((country) -> {
-            updatedCountryList.add(country);
-        });
+    public void filterCountryList() {
+        filteredCountryList.clear();
+        fullCountryList
+                .stream()
+                .filter(
+                        (country)
+                        -> (country.toLowerCase()
+                                .startsWith(countryNameInput.toLowerCase()) || country.startsWith(countryNameInput)))
+                .forEachOrdered(
+                        (country)
+                        -> {
+                    filteredCountryList.add(country);
+                });
     }
 
-    public List<String> getUpdatedCountryList() {
-        return updatedCountryList;
+    public List<String> getFilteredCountryList() {
+        return filteredCountryList;
     }
 
-    public void setUpdatedcountryList(List<String> updatedCountryList) {
-        this.updatedCountryList = updatedCountryList;
+    public void setFilteredcountryList(List<String> filteredCountryList) {
+        this.filteredCountryList = filteredCountryList;
     }
 
     public String getCountryNameInput() {
@@ -50,11 +58,11 @@ public class CountryManagedBean {
         this.countryNameInput = countryNameInput;
     }
 
-    public List<String> getCountryList() {
-        return countryList;
+    public List<String> getFullCountryList() {
+        return fullCountryList;
     }
 
-    public void setCountryList(List<String> countryList) {
-        this.countryList = countryList;
+    public void setFullCountryList(List<String> countryList) {
+        this.fullCountryList = countryList;
     }
 }
