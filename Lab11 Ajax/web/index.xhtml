@@ -10,7 +10,7 @@
         <h:form>
             Type Country : 
             <h:inputText value="#{countryManagedBean.countryNameInput}">
-                <f:ajax event="keyup" render="countryList" listener="#{countryManagedBean.updateCountries}" />
+                <f:ajax event="keyup" render="countryList" listener="#{countryManagedBean.updateCountryList}" />
             </h:inputText>
             <br/>
             <br />

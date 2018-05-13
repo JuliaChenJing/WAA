@@ -27,7 +27,7 @@ public class CountryManagedBean {
         }
     }
 
-    public void updateCountries() {
+    public void updateCountryList() {
         updatedCountryList.clear();
         countryList.stream().filter((country) -> (country.toLowerCase().startsWith(countryNameInput.toLowerCase()) || country.startsWith(countryNameInput))).forEachOrdered((country) -> {
             updatedCountryList.add(country);
