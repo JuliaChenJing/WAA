@@ -9,14 +9,13 @@
     <h:body>
         <h:form>
             Type Country : 
-
-            <h:inputText value="#{countryJSFManagedBean.countryName}">
-                <f:ajax event="keyup" render="countryList" listener="#{countryJSFManagedBean.updatedCountries}" />
+            <h:inputText value="#{countryManagedBean.countryNameInput}">
+                <f:ajax event="keyup" render="countryList" listener="#{countryManagedBean.updateCountries}" />
             </h:inputText>
             <br/>
             <br />
-            <h:selectOneListbox id="countryList"  value="#{countryJSFManagedBean.countryName}" >
-                <f:selectItems value="#{countryJSFManagedBean.newCountryList}" />
+            <h:selectOneListbox id="countryList"  value="#{countryManagedBean.countryNameInput}" >
+                <f:selectItems value="#{countryManagedBean.newCountryList}" />
             </h:selectOneListbox>        
         </h:form>
     </h:body>

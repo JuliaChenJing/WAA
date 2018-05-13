@@ -13,27 +13,27 @@ import javax.faces.bean.RequestScoped;
 
 @ManagedBean
 @RequestScoped
-public class CountryJSFManagedBean {
+public class CountryManagedBean {
 
-    private String countryName;
+    private String countryNameInput;
     private List<String> countryList = new ArrayList<>();
     private List<String> newCountryList = new ArrayList<>();
 
-    public CountryJSFManagedBean() {
+    public CountryManagedBean() {
         String[] locales = Locale.getISOCountries();
-        for(String countryCode: locales){
+        for (String countryCode : locales) {
             Locale obj = new Locale("", countryCode);
             countryList.add(obj.getDisplayCountry());
         }
     }
-   
-    public void updatedCountries(){
+
+    public void updateCountries() {
         newCountryList.clear();
-        countryList.stream().filter((country) -> (country.toLowerCase().startsWith(countryName.toLowerCase()) || country.startsWith(countryName))).forEachOrdered((country) -> {
+        countryList.stream().filter((country) -> (country.toLowerCase().startsWith(countryNameInput.toLowerCase()) || country.startsWith(countryNameInput))).forEachOrdered((country) -> {
             newCountryList.add(country);
         });
     }
-    
+
     public List<String> getNewCountryList() {
         return newCountryList;
     }
@@ -42,12 +42,12 @@ public class CountryJSFManagedBean {
         this.newCountryList = newCountryList;
     }
 
-    public String getCountryName() {
-        return countryName;
+    public String getCountryNameInput() {
+        return countryNameInput;
     }
 
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
+    public void setCountryNameInput(String countryNameInput) {
+        this.countryNameInput = countryNameInput;
     }
 
     public List<String> getCountryList() {
