@@ -17,7 +17,7 @@ public class CountryManagedBean {
 
     private String countryNameInput;
     private List<String> countryList = new ArrayList<>();
-    private List<String> newCountryList = new ArrayList<>();
+    private List<String> updatedCountryList = new ArrayList<>();
 
     public CountryManagedBean() {
         String[] locales = Locale.getISOCountries();
@@ -28,18 +28,18 @@ public class CountryManagedBean {
     }
 
     public void updateCountries() {
-        newCountryList.clear();
+        updatedCountryList.clear();
         countryList.stream().filter((country) -> (country.toLowerCase().startsWith(countryNameInput.toLowerCase()) || country.startsWith(countryNameInput))).forEachOrdered((country) -> {
-            newCountryList.add(country);
+            updatedCountryList.add(country);
         });
     }
 
-    public List<String> getNewCountryList() {
-        return newCountryList;
+    public List<String> getUpdatedCountryList() {
+        return updatedCountryList;
     }
 
-    public void setNewcountryList(List<String> newCountryList) {
-        this.newCountryList = newCountryList;
+    public void setUpdatedcountryList(List<String> updatedCountryList) {
+        this.updatedCountryList = updatedCountryList;
     }
 
     public String getCountryNameInput() {
