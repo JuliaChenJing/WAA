@@ -14,9 +14,10 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class CdShopManagedBean {
 
-    private List<ShoppingCartItem> cdList = new ArrayList<ShoppingCartItem>();
+    private List<ShoppingCartItem> cdList;
 
     public CdShopManagedBean() {
+        cdList = new ArrayList<ShoppingCartItem>();
         cdList.add(new ShoppingCartItem(1432, "The winnner takes it all", 12.95));
         cdList.add(new ShoppingCartItem(1321, "Yellow submarine", 11.35));
     }

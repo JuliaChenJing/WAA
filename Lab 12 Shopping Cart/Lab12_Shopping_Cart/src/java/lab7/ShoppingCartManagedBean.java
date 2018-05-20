@@ -15,7 +15,23 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class ShoppingCartManagedBean {
 
-    private List<ShoppingCartItem> shoppingCartList = new ArrayList<ShoppingCartItem>();
+    private List<ShoppingCartItem> shoppingCartList;
+
+    private HashMap<Integer, Integer> quantityMap;
+
+    private int quantity;
+
+    public ShoppingCartManagedBean() {
+
+        shoppingCartList = new ArrayList<ShoppingCartItem>();
+
+        quantityMap = new HashMap<Integer, Integer>();
+
+        shoppingCartList.add(new ShoppingCartItem(1432, "The winnner takes it all", 12.95,1));
+        shoppingCartList.add(new ShoppingCartItem(1321, "Yellow submarine", 11.35,2));
+        quantityMap.put(1432, 1);
+        quantityMap.put(1321, 2);
+    }
 
     public List<ShoppingCartItem> getShoppingCartList() {
         return shoppingCartList;
@@ -33,13 +49,4 @@ public class ShoppingCartManagedBean {
         this.quantityMap = quantityMap;
     }
 
-    private HashMap<Integer, Integer> quantityMap
-            = new HashMap<Integer, Integer>();
-
-    public ShoppingCartManagedBean() {
-        shoppingCartList.add(new ShoppingCartItem(1432, "The winnner takes it all", 12.95));
-        shoppingCartList.add(new ShoppingCartItem(1321, "Yellow submarine", 11.35));
-        quantityMap.put(1432, 1);
-        quantityMap.put(1321, 2);
-    }
 }

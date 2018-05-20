@@ -24,13 +24,13 @@
                         <f:facet name="header">Price</f:facet>
                         <h:outputText value="#{shoppingCartItem.price}" />
                     </h:column>
-                     <h:column>
+                    <h:column>
                         <f:facet name="header">Quantity</f:facet>
-                        <h:outputText value="#{shoppingCartItem.price}" />
+                        <h:outputText value="#{shoppingCartItem.quantity}" />
                     </h:column>
-                     <h:column>
+                    <h:column>
                         <f:facet name="header">Total Price</f:facet>
-                        <h:outputText value="#{shoppingCartItem.price}" />
+                        <h:outputText value="#{shoppingCartItem.price*shoppingCartItem.quantity}" />
                     </h:column>
                     <h:column>
                         <h:form>
