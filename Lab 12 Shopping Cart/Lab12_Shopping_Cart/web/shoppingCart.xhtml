@@ -11,7 +11,7 @@
             <h:panelGrid columns="2" border="1" rules="rows">
                 <f:facet name="header"><h1 style="color: red">Shopping Cart</h1></f:facet>
 
-                <h:dataTable border="1"  value="#{shoppingCartManagedBean.shoppingCartMap}" var="shoppingCartItem"  style="width: 100%">
+                <h:dataTable border="1"  value="#{shoppingCartManagedBean.shoppingCartList}" var="shoppingCartItem"  style="width: 100%">
                     <h:column>
                         <f:facet name="header">ID</f:facet>
                         <h:outputText value="#{shoppingCartItem.id}" />
@@ -22,6 +22,14 @@
                     </h:column> 
                     <h:column>
                         <f:facet name="header">Price</f:facet>
+                        <h:outputText value="#{shoppingCartItem.price}" />
+                    </h:column>
+                     <h:column>
+                        <f:facet name="header">Quantity</f:facet>
+                        <h:outputText value="#{shoppingCartItem.price}" />
+                    </h:column>
+                     <h:column>
+                        <f:facet name="header">Total Price</f:facet>
                         <h:outputText value="#{shoppingCartItem.price}" />
                     </h:column>
                     <h:column>
