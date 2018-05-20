@@ -9,17 +9,9 @@
     <h:body>
         <f:view>
             <h:panelGrid columns="2" border="1" rules="rows">
-                <f:facet name="header"><h1 style="color: red;">Employees of Acme Inc.</h1></f:facet>
-                <h:form>
-                    <h:dataTable border="1" value="#{employeeManagedBean.employeelist}" var="employee">
-                        <h:column>
-                            <h:commandLink value="#{employee.name}" action="#{employeeManagedBean.displaySelectedEmployee(employee.id)}"/>
-                            <h:inputHidden value="#{employee.id}" />
-                        </h:column>
-                    </h:dataTable>
-                    <h:commandButton value="Show All" action="showAll.xhtml"/>
-                </h:form>
-                <h:dataTable border="1"  value="#{employeeManagedBean.selectedEmployee}" var="employee">
+                <f:facet name="header"><h1 style="color: red">CD Shop</h1></f:facet>
+
+                <h:dataTable border="1"  value="#{employeeManagedBean.employeelist}" var="employee"  style="width: 100%">
                     <h:column>
                         <f:facet name="header">ID</f:facet>
                         <h:outputText value="#{employee.id}" />
@@ -29,12 +21,13 @@
                         <h:outputText value="#{employee.name}" />
                     </h:column> 
                     <h:column>
-                        <f:facet name="header">Phone</f:facet>
-                        <h:outputText value="#{employee.phone}" />
-                    </h:column> 
-                    <h:column>
-                        <f:facet name="header">Salary</f:facet>
+                        <f:facet name="header">Price</f:facet>
                         <h:outputText value="#{employee.salary}" />
+                    </h:column>
+                    <h:column>
+                        <h:form>
+                            <h:commandButton value="add to cart" action="shoppingCart.xhtml"/>
+                        </h:form>
                     </h:column>
                 </h:dataTable>
             </h:panelGrid>
