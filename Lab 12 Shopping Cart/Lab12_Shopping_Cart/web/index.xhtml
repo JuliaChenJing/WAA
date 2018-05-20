@@ -11,18 +11,18 @@
             <h:panelGrid columns="2" border="1" rules="rows">
                 <f:facet name="header"><h1 style="color: red">CD Shop</h1></f:facet>
 
-                <h:dataTable border="1"  value="#{employeeManagedBean.employeelist}" var="employee"  style="width: 100%">
+                <h:dataTable border="1"  value="#{cdShopManagedBean.cdList}" var="cd"  style="width: 100%">
                     <h:column>
                         <f:facet name="header">ID</f:facet>
-                        <h:outputText value="#{employee.id}" />
+                        <h:outputText value="#{cd.id}" />
                     </h:column>
                     <h:column>
                         <f:facet name="header">Name</f:facet>
-                        <h:outputText value="#{employee.name}" />
+                        <h:outputText value="#{cd.name}" />
                     </h:column> 
                     <h:column>
                         <f:facet name="header">Price</f:facet>
-                        <h:outputText value="#{employee.salary}" />
+                        <h:outputText value="#{cd.price}" />
                     </h:column>
                     <h:column>
                         <h:form>

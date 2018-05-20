@@ -5,21 +5,19 @@
  */
 package lab7;
 
-public class Employee {
+public class ShoppingCartItem {
 
     private int id;
     private String name;
-    private String phone;
-    private double salary;
+    private double price;
 
-    public Employee() {
+    public ShoppingCartItem() {
     }
 
-    public Employee(int id, String name, String phone, double salary) {
+    public ShoppingCartItem(int id, String name, double price) {
         this.id = id;
         this.name = name;
-        this.phone = phone;
-        this.salary = salary;
+        this.price = price;
     }
 
     public int getId() {
@@ -38,19 +36,11 @@ public class Employee {
         this.name = name;
     }
 
-    public String getPhone() {
-        return phone;
+    public double getPrice() {
+        return price;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
