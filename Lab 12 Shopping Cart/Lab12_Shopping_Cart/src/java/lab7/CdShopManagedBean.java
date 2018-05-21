@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.event.ActionEvent;
+import javax.faces.component.UIParameter;
 
 @ManagedBean
 @RequestScoped
@@ -18,8 +20,8 @@ public class CdShopManagedBean {
 
     public CdShopManagedBean() {
         cdList = new ArrayList<ShoppingCartItem>();
-        cdList.add(new ShoppingCartItem(1432, "The winnner takes it all", 12.95));
-        cdList.add(new ShoppingCartItem(1321, "Yellow submarine", 11.35));
+        cdList.add(new ShoppingCartItem("A1432", "The winnner takes it all", 12.95));
+        cdList.add(new ShoppingCartItem("A1321", "Yellow submarine", 11.35));
     }
 
     public List<ShoppingCartItem> getCdList() {
@@ -28,5 +30,9 @@ public class CdShopManagedBean {
 
     public void setCdList(List<ShoppingCartItem> cdList) {
         this.cdList = cdList;
+    }
+
+    public String showShoppingCart() {
+        return "shoppingCart";
     }
 }

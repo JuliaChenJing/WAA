@@ -34,7 +34,11 @@
                     </h:column>
                     <h:column>
                         <h:form>
-                            <h:commandButton value="remove from cart" action="shoppingCart.xhtml"/>
+                            <h:commandButton value="remove from cart" 
+                                             actionListener="#{shoppingCartManagedBean.removeFromCart}" 
+                                             action="#{shoppingCartManagedBean.updateShoppingCart}" >
+                                <f:param id="id" value="#{shoppingCartItem.id}" />
+                            </h:commandButton>
                         </h:form>
                     </h:column>
                 </h:dataTable>
