@@ -33,11 +33,17 @@
                                 <f:param id="name" value="#{cd.name}" />
                                 <f:param id="price" value="#{cd.price}" />
                                 <f:param id="quantity" value="#{cd.quantity}" />
-                            </h:commandButton>                     
+                            </h:commandButton>    
+
                         </h:form>
                     </h:column>
                 </h:dataTable>
             </h:panelGrid>
+            <h:form>
+                <h:commandButton value="Go to Shopping Cart"
+                                 action="shoppingCart">
+                </h:commandButton>   
+            </h:form>
         </f:view>
     </h:body>
 </html>

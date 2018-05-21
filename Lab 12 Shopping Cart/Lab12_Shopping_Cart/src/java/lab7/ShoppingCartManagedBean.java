@@ -21,8 +21,6 @@ public class ShoppingCartManagedBean {
 
     private HashMap<Integer, Integer> quantityMap;
 
-    private int quantity;
-
     public ShoppingCartManagedBean() {
 
         shoppingCartList = new ArrayList<ShoppingCartItem>();
@@ -51,33 +49,44 @@ public class ShoppingCartManagedBean {
         this.quantityMap = quantityMap;
     }
 
-    public void removeFromCart(ActionEvent event) {
-
-        UIParameter component = (UIParameter) event.getComponent().findComponent("id");
-        String idToDelete = component.getValue().toString();
-        for (ShoppingCartItem item : shoppingCartList) {
-            if (idToDelete.equals(item.getId())) {
-                shoppingCartList.remove(item);
-            }
-        }
-    }
-
     public String updateShoppingCart() {
         return "shoppingCart";
     }
 
     public void addToCart(ActionEvent event) {
-
         UIParameter component1 = (UIParameter) event.getComponent().findComponent("id");
         String id = component1.getValue().toString();
-
         UIParameter component2 = (UIParameter) event.getComponent().findComponent("name");
         String name = component2.getValue().toString();
         UIParameter component3 = (UIParameter) event.getComponent().findComponent("price");
         String price = component3.getValue().toString();
         UIParameter component4 = (UIParameter) event.getComponent().findComponent("quantity");
         String quantity = component4.getValue().toString();
+        boolean inShoppingCart = false;
+        for (ShoppingCartItem item : shoppingCartList) {
+            if (id.equals(item.getId())) {
+                inShoppingCart = true;
+                item.setQuantity(item.getQuantity() + 1);
+                break;
+            }
+        }
+        if (!inShoppingCart) {
+            shoppingCartList.add(new ShoppingCartItem(id, name, Double.parseDouble(price), Integer.parseInt(quantity)));
+        }
 
-        shoppingCartList.add(new ShoppingCartItem(id, name, Double.parseDouble(price), Integer.parseInt(quantity)));
+    }
+
+    public void removeFromCart(ActionEvent event) {
+        UIParameter component = (UIParameter) event.getComponent().findComponent("id");
+        String idToDelete = component.getValue().toString();
+        for (ShoppingCartItem item : shoppingCartList) {
+            if (idToDelete.equals(item.getId())) {
+                if (item.getQuantity() == 1) {
+                    shoppingCartList.remove(item);
+                } else {
+                    item.setQuantity(item.getQuantity() - 1);
+                }
+            }
+        }
     }
 }
